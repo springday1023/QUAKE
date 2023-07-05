@@ -1,0 +1,702 @@
+@import "reset.scss";
+@import "layout.scss"; 
+
+
+// 메인
+.main_container{ 
+    position: relative;
+    .visual_slider { 
+        .swiper-slide {
+            height: calc(100vh - 230px); 
+            min-height: 800px;
+            &.slider01 { 
+                background: url('../assets/images/pc/main_slider_img01.jpg') center no-repeat;
+                background-size: cover;
+            }
+            &.slider02 { 
+                background: url('../assets/images/pc/main_slider_img02.jpg') center no-repeat;
+                background-size: cover;
+            }
+            .text {
+                position: absolute;
+                left: 50%;
+                top: 50%; 
+                width: 1260px;
+                margin-top: -283px;
+                margin-left: -630px;
+                .text_01 { 
+                    font: normal normal 300 70px/75px 'Montserrat';
+                    color: #fff;
+                    margin-bottom: 18px;
+                }
+                .text_02 { 
+                    font: normal normal normal 20px/30px 'Noto Sans KR';
+                    color: #fff;
+                }
+            }
+        }
+        .swiper-button-prev{
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            left: 50%;
+            top: 50%;
+            margin-top: 30px;
+            margin-left: -630px;
+            background: url('../assets/images/pc/btn_main_slider_prev.png') 0 0 no-repeat;
+            z-index: 20;
+            cursor: pointer;
+        }
+        .swiper-button-next{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            margin-top: 30px;
+            margin-left: -562px;
+            background: url('../assets/images/pc/btn_main_slider_next.png') 0 0 no-repeat;
+            z-index: 20;
+            cursor: pointer;
+        }
+    }
+    .notice_wrap {
+        position: absolute;
+        left: 50%;
+        bottom: 35px;
+        width: 1260px;
+        background: transparent linear-gradient(91deg, #005175 0%, #127CAC 100%) 0% 0% no-repeat padding-box;
+        z-index: 10;
+        margin-left: -630px;
+        height: 103px;
+        padding-top: 36px;
+        box-sizing: border-box;
+        dt {
+            float: left;
+            color: #FFFFFF;
+            font-size: 22px;
+            line-height: 30px;
+            position: relative;
+            width: 169px;
+            text-align: center;
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 6px;
+                border-right: 3px solid #fff;
+                height: 22px;
+            }
+        }
+        dd {
+            float: left;
+            padding-left: 45px;
+            width: 1032px;
+            box-sizing: border-box;
+            a {
+                color: #FFFFFF;
+                font-size: 16px;
+                line-height: 30px;
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                span{
+                    display: inline-block;
+                    &:last-child{
+                        position: absolute;
+                        right: 0;
+                        top: 0; 
+                        letter-spacing: 0px;
+                        padding-right: 50px;
+                        &:before{
+                            content: "";
+                            position: absolute;
+                            background-color: #fff; 
+                            top: 4px;
+                            right: 10px;
+                            width: 2px;
+                            height: 23px;
+                            margin-left: -1px;
+                        } 
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            background-color: #fff; 
+                            top: 15px;
+                            right: 0;
+                            width: 23px;
+                            height: 2px;
+                            margin-top: -1px;
+                        }
+                    } 
+                }
+            }
+        }
+    }
+}
+
+
+// 소개
+.intro_container {
+
+    //소개
+    .about_wrap{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        min-width: 1260px;
+        padding-top: 55px;
+        h3 {
+            padding-top: 28px;
+            font-size: 30px;
+            line-height: 44px;
+            color: #707070;
+            margin-bottom: 12px;
+        }
+        p {
+            width: 360px;
+            font-size: 15px;
+            color: #656565;
+        }
+        .section_01{
+            position: relative;
+            width: 1260px;
+            margin: 0 auto;
+            height: 332px;
+            margin-bottom: 85px;
+            &:after{
+                content: "";
+                position: absolute;
+                left: 416px;
+                top: 0;
+                width: 100%;
+                background: url('../assets/images/pc/bg_about_01.png') 0 0 no-repeat;
+                height: 332px;
+            }
+        }
+        .section_02{
+            position: relative;
+            width: 1260px;
+            margin: 0 auto;
+            padding-left: 844px;
+            box-sizing: border-box;
+            height: 332px; 
+            &:after{
+                content: "";
+                position: absolute;
+                right: 416px;
+                top: 0;
+                width: 100%;
+                background: url('../assets/images/pc/bg_about_02.png') 0 0 no-repeat;
+                height: 332px;
+            }
+        }
+    }
+
+    //약관
+    .terms_wrap{
+        @include defaultLayout;
+        section + section{
+            margin-top: 50px;
+        }
+        h3 {
+            margin:0 20px 15px 0; 
+        }
+        ul {
+            li {
+                padding-left: 13px;
+                position: relative;
+                margin-bottom: 8px;
+                font-size: 15px;
+                &::before{
+                    content:'';
+                    position: absolute;
+                    left: 0;
+                    top: 9px;
+                    width: 5px;
+                    height: 5px;
+                    background-color: $point-color;
+                    display: inline-block;
+                    vertical-align: middle;
+                    
+                }
+            }
+        }
+    }
+
+    // 공지
+    .notices_wrap{
+        @include defaultLayout;
+        .search_wrap {
+            height: 48px;
+            margin-bottom: 20px; 
+            .search_form {
+                width: 337px;
+                height: 46px;
+                border: 1px solid  $point-color;
+                opacity: 1;
+                float: right;
+                position: relative;
+                select {
+                    color: $point-color;
+                    font-weight: 700;
+                    font-size: 14px;
+                    height: 44px;
+                    border: 0;
+                    width: 80px;
+                    font-size: 15px;
+                    text-indent: 10px;
+                    font-weight: bold;
+                }
+                input {
+                    width: 220px;
+                    height: 40px;
+                    border: 0;
+                }
+                .btn_search {
+                    position: absolute;
+                    right: 1px;
+                    top: 1px;
+                    width: 44px;
+                    height: 44px;
+                    font-family: 'Material Symbols Outlined'; 
+                    &::after{
+                        content: "search";
+                        vertical-align: middle;
+                        color: $point-color;
+                        font-size: 25px;
+                    }
+                    span {
+                        display: none;
+                    }
+                }
+
+            }
+        }
+        .table_list{
+            margin-bottom: 45px;
+        }
+        .table_view {
+            margin-bottom: 10px;
+            .entry_title {
+                border: 0;
+                width: 100%; 
+                height: 30px;
+            }
+            .file_list {
+                margin-bottom: 10px;
+                button {
+                    &::after{
+                        font-family: 'Material Symbols Outlined'; 
+                        content: "delete";
+                        font-size: 20px;
+                        vertical-align: middle;
+                        margin-left: 5px;
+                    }
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .content_print{
+            border-top: 1px solid #e0e0e0;
+            padding: 15px 25px;
+			border-bottom: 1px solid #A5A5A5;
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 18px;
+            a {
+                color: $link-color;
+                text-decoration: none;
+            }
+        }
+        .content_editor{
+			border-bottom: 1px solid #A5A5A5;
+            margin-bottom: 18px;
+            padding: 15px 0;
+        }
+    }
+}
+
+
+// 지진관측소
+.observatory_container{
+    .observatory_wrap{
+        @include defaultLayout;
+        .flex_box {
+            display: flex;
+            .map {
+                width: 50%;
+                box-sizing: border-box;
+                padding-right: 10px;
+                position: relative;
+                height: 800px;
+                .solt {
+                    position: absolute;
+                    left: 10px;
+                    top: 10px;
+                    font-weight: 700;
+                    display: inline-block; 
+                    padding: 10px;
+                    display:flex;
+                    border-radius: 3px;
+                    h4 {
+                        width: 106px;
+                        height: 40px; 
+                        line-height: 40px;
+                        background: #fff;
+                        box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.16);
+                        border-radius: 4px;
+                        text-align: center;
+                        margin-right: 5px;
+                        font-weight: normal;
+                    }
+                    ul {
+                        padding:0 10px;
+                        height: 40px; 
+                        line-height: 40px;
+                        background: #fff;
+                        box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.16);
+                        border-radius: 4px;
+                        text-align: center;
+                        display:flex;
+                        span {
+                            color: $point-color;
+                        }
+                    }
+                }
+                .info_popup {
+                    position: absolute;
+                    left: 50px;
+                    top: 300px;
+                    min-width: 220px; 
+                    transition: box-shadow .25s;
+                    padding: 10px;
+                    margin: 0 0 -4px;
+                    box-sizing: border-box;
+                    border-radius: 2px;
+                    background-color: #fff;
+                    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12), 0 1px 5px 0 rgba(0,0,0,.2);
+                    .title {
+                        color: #075b81;
+                        font-weight: 700;
+                        margin-bottom: 4px;
+                    }
+                    .map_info {
+                        background: #ebebeb;
+                        padding: 8px;
+                        margin-bottom: 4px;
+                        line-height: 20px;
+                        & > span {
+                            display: block;
+                        }
+                    }
+                    .rtl {
+                        text-align: right;
+                        button {
+                            color: $point-color;
+                            text-decoration: underline;
+                            text-underline-position: under;
+                        }
+                    }
+                    .btn_close {
+                        position: absolute;
+                        right: 5px;
+                        top: 5px;
+                        width: 20px;
+                        height: 20px;
+                        color: $point-color;
+                        span {
+                            display: none;
+                        }
+                        &::after{
+                            font-family: 'Material Symbols Outlined'; 
+                            content: "close";
+                            font-size: 20px;
+                            font-weight: bold;
+                        }
+                    }
+                    &:before {
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        transform: rotate(45deg); 
+                        background: #fff;
+                        position: absolute;
+                        z-index: 998;
+                        left: calc(50% - 10px);
+                        bottom: -8px;
+                    }
+                }
+            }
+            .list {
+                width: 50%;
+                .table_list {
+                    margin-bottom: 20px;
+                    td {
+                        cursor: pointer;
+                        padding: 10px 15px;
+                    }
+                }
+            }
+        }
+    }
+    .metadata_wrap{
+        @include defaultLayout;
+        .metadata {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+
+// 지진관측자료
+.data_container { 
+    .eventdata_wrap{
+        @include defaultLayout;
+        .table_view, .table_list {
+            margin-bottom: 20px;
+        }
+		.table_footer{
+			margin-top: 20px;
+		}
+    }
+    .continuousdata_wrap{
+        @include defaultLayout;
+        .table_view {
+            margin-bottom: 20px;
+        }
+        .section_01 {
+            display: flex;
+            ul {
+                margin-left: 20px;
+                display: flex;
+                li {
+                    margin-right: 10px;
+                }
+            }
+        }
+        .btn_wrap {
+            a {
+                width: 270px;
+            }
+        }
+    }
+    .webservices_wrap{
+        @include defaultLayout;
+        
+			a {
+				color: $link-color !important;
+			}
+    }
+}
+
+
+// 지진 분석 정보
+.analysis_container { 
+    .majorearthquakes_wrap,  
+    .annualreport_wrap{
+        @include defaultLayout;
+        .table_view  {
+            margin-bottom: 20px; 
+            .checkbox_01,
+            .radio_01 {
+                margin-right: 10px;
+            } 
+            .flex_box > div{margin-bottom: 10px;}
+        } 
+        .btn_wrap {
+            a {
+                width: 270px;
+            }
+        }
+    }
+    .kesmdb_wrap{
+
+        @include defaultLayout;
+            
+        .table_view  {
+            margin-bottom: 20px; 
+            .checkbox_01,
+            .radio_01 {
+                margin-right: 10px;
+            } 
+            .flex_box > div{margin-bottom: 10px;}
+        } 
+        .btn_wrap {
+            a {
+                width: 270px;
+            }
+        }
+        .text_cation_02 { 
+            margin-bottom: 10px;
+            a {
+                text-decoration: none;
+            }
+        }
+        .table_footer, 
+        .table_list  {
+            margin-bottom: 40px;
+            td {
+                cursor: pointer;
+            }
+            button {
+                color:  $link-color;
+            }
+        }
+        .section_01 {
+            display: flex;
+            ul {
+                margin-left: 20px;
+                display: flex;
+                li {
+                    margin-right: 10px;
+                }
+            }
+            .sub_form {
+                margin: 10px 20px 20px;
+            }
+        }
+        .text_terms {
+            text-align: center;
+            padding:30px 0 20px;
+            a {
+                color:   $link-color;
+            }
+        }
+    } 
+}
+
+
+// 팝업
+.detail_popup {
+    .table_view{
+        margin-bottom: 25px;
+    }
+    .pic{
+        .pic_list {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                width: 50%;
+                padding: 0 5px;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+                time {
+                    display: block;
+                    background: #ECECEC;
+                    height: 47px;
+                    line-height: 47px;
+                    padding: 0 13px;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    .tolltip {
+        display: inline-block;
+        position: relative;
+        .cont {
+            display: none;
+            color: #fff;
+            text-align: left;
+            padding:10px 20px;
+            line-height: 1.5;
+            position: absolute; 
+            width: 153px;
+            left:calc(50% - 100px);;
+            top: 30px;
+            box-sizing: border-box;
+            height: 136px;
+            background: rgba(0, 0, 0, 0.6) 0% 0% no-repeat; 
+            &::before{
+                content: ""; 
+                width: 0; 
+                height: 0; 
+                border-left: 7px solid transparent;
+                border-right: 7px solid transparent; 
+                border-bottom: 7px solid rgba(0, 0, 0, 0.6);
+                position: absolute;
+                z-index: 1;
+                left: calc(50% + 15px);
+                top: -7px;
+            }
+            strong {
+                display: block;
+                font-size: 15px;
+                padding-bottom: 5px;
+            }
+            span {
+                font-size: 13px;
+                font-weight: normal;
+            }
+        }
+        button:hover + .cont {
+            display: block;
+        }
+    }
+}
+
+.kesm_report {
+    display: flex;
+    .select_option {
+        width: 50%;
+        box-sizing: border-box;
+        padding-right: 20px;
+        .box {
+            margin-bottom: 20px;
+            h3 {
+                font-size: 17px;
+                margin-bottom: 5px;
+                font-weight: normal;
+            }
+            p {
+                margin-left: 20px;
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+            select {
+                margin: 0 10px 0 5px;
+                width: 50px;
+            }
+            input[type=number]{ 
+                color: #075b81;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid #d9d9d9;
+                outline: none;
+                height: 45px;
+                width: 100px;
+                font-size: 14px; 
+                box-sizing: content-box; 
+                text-align: center;
+                vertical-align: middle;
+            }
+        }
+    }
+    .Select_data {
+        width: 50%;
+        padding-left: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        h3 {
+            font-size: 17px;
+            margin-bottom: 5px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        & > p {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .text_terms {
+            text-align: center;
+            padding:30px 0 20px;
+            a {
+                color:   $link-color;
+            }
+        }
+    }
+}
