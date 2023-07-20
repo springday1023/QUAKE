@@ -29,13 +29,13 @@ const Home = () => {
                         <SwiperSlide className="slider01"> 
                             <div className="text">
                                 <p className="text_01">MULTIPLATFORM<br />GEOSCIENCE<br />INFORMATION</p>
-                                <p className="text_02">국민의 삶의 질 향상과 국민 행복 추구에 기여하겠습니다.</p>
+                                <p className="text_02">국민의 삶의 질 향상과<br />  국민 행복 추구에 기여하겠습니다.</p>
                             </div>
                         </SwiperSlide>  
                         <SwiperSlide className="slider02"> 
                             <div className="text">
                                 <p className="text_01">MULTIPLATFORM<br />GEOSCIENCE<br />INFORMATION</p>
-                                <p className="text_02">국민의 삶의 질 향상과 국민 행복 추구에 기여하겠습니다.</p>
+                                <p className="text_02">국민의 삶의 질 향상과<br /> 국민 행복 추구에 기여하겠습니다.</p>
                             </div>
                         </SwiperSlide>    
                     </Swiper>
@@ -43,10 +43,11 @@ const Home = () => {
                 <dl className="notice_wrap">
                     <dt>공지사항</dt>
                     <dd>
-                        <Link to="#">
+                        <Link to="#" className="link">
                             <span>[안내] MGEO 지질정보시스템 업그레이드</span>
                             <span>2021.01.01</span>
                         </Link>
+                        <Link to="#" className="btn_more"><span>더보기</span></Link>
                     </dd>
                 </dl>
             </main> 

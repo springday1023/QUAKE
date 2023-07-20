@@ -56,27 +56,31 @@ const AnnualReport = () => {
                                 <td>
                                     <div className="form_box">
                                         <label className="checkbox_01"><input type="checkbox" name="period" /><span>기간</span></label> 
-                                        <input type="text" className="entry date" placeholder="2020.01.01" /> ~ <input type="text" className="entry date" placeholder="2020.01.01" />
+                                        <span className="group_m">
+                                            <input type="text" className="entry date" placeholder="2020.01.01" /> ~ <input type="text" className="entry date" placeholder="2020.01.01" />
+                                        </span>
                                     </div>  
                                     <div className="form_box">
                                         <label className="checkbox_01"><input type="checkbox" name="period" /><span>규모</span></label> 
-                                        <input type="text" className="entry" placeholder="0" /> ~ <input type="text" className="entry" placeholder="0" />
+                                        <span className="group_m">
+                                            <input type="text" className="entry" placeholder="0" /> ~ <input type="text" className="entry" placeholder="0" />
+                                        </span>
                                     </div>  
                                      
-                                    <div className="form_box flex_box"> 
+                                    <div className="form_box flex_box m_flex_none"> 
                                         <label className="checkbox_01"><input type="checkbox" name="magnitude" /><span>위치</span></label>
-                                        <div>
+                                        <div className="group_m">
                                             <div className="form_box"> 
-                                                <label className="radio_01"><input type="radio" name="selectorType" /><span>위도 범위</span></label>
+                                                <label className="radio_01"><input type="radio" name="selectorType" /><span>위도 <span className="pc">범위</span></span></label>
                                                 <input type="text" className="entry" placeholder="35" /> ~ <input type="text" className="entry" placeholder="38" />
                                                 <span className="box">
-                                                    <strong>경도 범위</strong>
+                                                    <strong>경도 <span className="pc">범위</span></strong>
                                                     <input type="text" className="entry" placeholder="126" /> ~ <input type="text" className="entry" placeholder="129" />
                                                 </span>
                                                 <span className="text_cation"><span>!</span> 위도 범위를 입력해주세요.</span>
                                             </div>  
                                             <div className="form_box">
-                                                <label className="radio_01"><input type="radio" name="selectorType" /><span>위경도 중심</span></label>
+                                                <label className="radio_01"><input type="radio" name="selectorType" /><span><span className="pc">위경도</span> 중심</span></label>
                                                 <input type="text" className="entry" placeholder="36.3" />, <input type="text" className="entry" placeholder="127.5" />
                                                 <span className="box">
                                                     <strong>반경</strong>
@@ -87,7 +91,9 @@ const AnnualReport = () => {
                                     </div>  
                                     <div className="form_box">
                                         <label className="checkbox_01"><input type="checkbox" name="period" /><span>진원 깊이(km)</span></label> 
-                                        <input type="text" className="entry" placeholder="0" /> ~ <input type="text" className="entry" placeholder="30" />
+                                        <span className="group_m">
+                                            <input type="text" className="entry" placeholder="0" /> ~ <input type="text" className="entry" placeholder="30" />
+                                        </span>
                                     </div>  
                                      
                                 </td> 
@@ -102,18 +108,18 @@ const AnnualReport = () => {
                                     </div>
                                     <div className="form_box flex_box"> 
                                         <span className="text_label">위치 :</span>
-                                        <div>
+                                        <div className="group_m">
                                             <div className="form_box"> 
-                                                <label className="radio_01"><input type="radio" name="selectorType" /><span>위도 범위</span></label>
+                                                <label className="radio_01"><input type="radio" name="selectorType" /><span>위도<span className="pc"> 범위</span></span></label>
                                                 <input type="text" className="entry" placeholder="35" /> ~ <input type="text" className="entry" placeholder="38" />
                                                 <span className="box">
-                                                    <strong>경도 범위</strong>
+                                                    <strong>경도<span className="pc"> 범위</span></strong>
                                                     <input type="text" className="entry" placeholder="126" /> ~ <input type="text" className="entry" placeholder="129" />
                                                 </span>
                                                 <span className="text_cation"><span>!</span> 위도 범위를 입력해주세요.</span>
                                             </div>  
                                             <div className="form_box">
-                                                <label className="radio_01"><input type="radio" name="selectorType" /><span>위경도 중심</span></label>
+                                                <label className="radio_01"><input type="radio" name="selectorType" /><span><span className="pc">위경도 </span>중심</span></label>
                                                 <input type="text" className="entry" placeholder="36.3" />, <input type="text" className="entry" placeholder="127.5" />
                                                 <span className="box">
                                                     <strong>반경</strong>
@@ -130,7 +136,7 @@ const AnnualReport = () => {
                                         </span>
                                         <div className="extend_menu">
                                             <div className="search">
-                                                검색 <input type="text" placeholder="입력하세요" className="search_entry" />
+                                                <span>검색</span> <input type="text" placeholder="입력하세요" className="search_entry" />
                                             </div>
                                             <ul>
                                                 <li><label className="checkbox_02"><input type="checkbox" name="selectorType" /><span>AJD (안좌도)</span></label></li>
@@ -208,20 +214,28 @@ const AnnualReport = () => {
                                 <td> 
                                     <div className="form_box">
                                         <label className="checkbox_01"><input type="checkbox" name="period" /><span>진앙 거리(km)</span></label> 
-                                        <input type="text" className="entry" placeholder="0" /> ~ <input type="text" className="entry" placeholder="30" />
+                                        <span className="group_m">
+                                            <input type="text" className="entry" placeholder="0" /> ~ <input type="text" className="entry" placeholder="30" />
+                                        </span>
                                     </div>  
                                     <div className="form_box">
                                         <label className="checkbox_01"><input type="checkbox" name="period" /><span>수평방향 PGA (cm/s<sup>2</sup>)</span></label> 
-                                        <input type="text" className="entry" placeholder="0" /> ~ <input type="text" className="entry" placeholder="30" />
+                                        <span className="group_m">
+                                            <input type="text" className="entry" placeholder="0" /> ~ <input type="text" className="entry" placeholder="30" />
+                                        </span>
                                     </div>  
                                     <div className="form_box">
                                         <label className="checkbox_01"><input type="checkbox" name="period" /><span>수직방향 PGA (cm/s<sup>2</sup>)</span></label> 
-                                        <input type="text" className="entry" placeholder="0" /> ~ <input type="text" className="entry" placeholder="30" />
+                                        <span className="group_m">
+                                            <input type="text" className="entry" placeholder="0" /> ~ <input type="text" className="entry" placeholder="30" />
+                                        </span>
                                     </div>  
                                     <div className="form_box">
                                         <label className="checkbox_01"><input type="checkbox" name="period" /><span>센서 설치 유형:</span></label> 
-                                        <label className="radio_01"><input type="radio" name="selectorType" /><span>지표형</span></label>
-                                        <label className="radio_01"><input type="radio" name="selectorType" /><span>시추형</span></label>
+                                        <span className="group_m">
+                                            <label className="radio_01"><input type="radio" name="selectorType" /><span>지표형</span></label>
+                                            <label className="radio_01"><input type="radio" name="selectorType" /><span>시추형</span></label>
+                                        </span>
                                     </div>  
                                      
                                 </td> 
@@ -242,7 +256,7 @@ const AnnualReport = () => {
                         </select>
                     </div>
 
-                    <div className="table_list line">
+                    <div className="table_list line mobile_scroll">
                         <table summary="K-ESM 목록">
                             <colgroup>
                                 <col style={{"width":"5%"}} />
@@ -332,6 +346,7 @@ const AnnualReport = () => {
                         <Link to="/" className="btn_big">다운로드</Link>
                     </div>
                 </section>
+                
             </main>
             
             {/* Popup */}

@@ -25,13 +25,17 @@
                 margin-top: -283px;
                 margin-left: -630px;
                 .text_01 { 
-                    font: normal normal 300 70px/75px 'Montserrat';
+                    font-family: 'Montserrat';
+                    font-size: 70px;
+                    line-height: 75px;
+                    font-weight: 300;
                     color: #fff;
                     margin-bottom: 18px;
                 }
-                .text_02 { 
-                    font: normal normal normal 20px/30px 'Noto Sans KR';
+                .text_02 {  
+                    font-size: 20px;  
                     color: #fff;
+                    display: block;
                 }
             }
         }
@@ -90,10 +94,10 @@
         }
         dd {
             float: left;
-            padding-left: 45px;
+            padding:0 45px;
             width: 1032px;
             box-sizing: border-box;
-            a {
+            a.link {
                 color: #FFFFFF;
                 font-size: 16px;
                 line-height: 30px;
@@ -102,35 +106,49 @@
                 justify-content: space-between;
                 align-items: center;
                 span{
-                    display: inline-block;
-                    &:last-child{
-                        position: absolute;
-                        right: 0;
-                        top: 0; 
-                        letter-spacing: 0px;
-                        padding-right: 50px;
-                        &:before{
-                            content: "";
-                            position: absolute;
-                            background-color: #fff; 
-                            top: 4px;
-                            right: 10px;
-                            width: 2px;
-                            height: 23px;
-                            margin-left: -1px;
-                        } 
-                        &:after{
-                            content: "";
-                            position: absolute;
-                            background-color: #fff; 
-                            top: 15px;
-                            right: 0;
-                            width: 23px;
-                            height: 2px;
-                            margin-top: -1px;
-                        }
-                    } 
+                    &:first-child {
+                     white-space: nowrap;   
+                     overflow: hidden;
+                     text-overflow: ellipsis;
+                     width: 100%;
+                     box-sizing: border-box;
+                    }
                 }
+            }
+            a.btn_more {
+                position: absolute;
+                right: 25px;
+                top: 36px;  
+                letter-spacing: 0px; 
+                span {
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    overflow: hidden;
+                    text-indent: -999px;
+                }
+                &:before{
+                    text-indent: 0;
+                    content: "";
+                    position: absolute;
+                    background-color: #fff; 
+                    top: 4px;
+                    right: 10px;
+                    width: 2px;
+                    height: 23px;
+                    margin-left: -1px;
+                } 
+                &:after{
+                    content: "";
+                    text-indent: 0;
+                    position: absolute;
+                    background-color: #fff; 
+                    top: 15px;
+                    right: 0;
+                    width: 23px;
+                    height: 2px;
+                    margin-top: -1px;
+                } 
             }
         }
     }
@@ -505,7 +523,9 @@
             .radio_01 {
                 margin-right: 10px;
             } 
-            .flex_box > div{margin-bottom: 10px;}
+            .flex_box > div { 
+                margin-bottom: 10px; 
+            }
         } 
         .btn_wrap {
             a {
@@ -524,6 +544,26 @@
                 margin-right: 10px;
             } 
             .flex_box > div{margin-bottom: 10px;}
+            th {
+                position: relative;
+                .text_quote {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 0;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 12px;
+                    font-weight: normal;
+                    @media (max-width: 768px) {  
+                        position: static;
+                        width: auto;
+                        margin-left: 20px;
+                    }
+                    &::before{
+                        @include googleIconFont('error',12px);  
+                    }
+                }
+            }
         } 
         .btn_wrap {
             a {
@@ -563,7 +603,7 @@
             text-align: center;
             padding:30px 0 20px;
             a {
-                color:   $link-color;
+                color: $link-color;
             }
         }
     } 
@@ -571,7 +611,7 @@
 
 
 // 팝업
-.detail_popup {
+.stationsDetail_popup {
     .table_view{
         margin-bottom: 25px;
     }
@@ -699,4 +739,487 @@
             }
         }
     }
-}
+} 
+
+@media (max-width: 1279px) { 
+        
+    @media (max-width: 768px) { 
+        .table_view {
+            margin-bottom: 20px;
+            col {
+                display: none;
+            }
+            width: 100%;
+            tr {
+                display: flex;
+                width: 100%; 
+                position: relative;
+                flex-wrap: wrap; 
+                th {
+                    width: 100%;
+                    height: 50px;
+                    display: inline-flex;
+                    box-sizing: border-box;
+                    align-items: center;
+                    justify-content: center;
+                }
+                td {
+                    width: 100%;
+                    box-sizing: border-box; 
+                    padding: 20px 0;
+                }
+            }
+            .form_box {
+                .group_m {
+                    display: block;
+                }
+                .radio_01 {
+                    width: auto;
+                    overflow: hidden;
+                    padding-bottom: 10px;
+                    margin-right: 0 !important;
+                    & +  .radio_01 { 
+                        margin-left: 0;
+                        margin-right: 10px;
+                    }
+                } 
+                .box {
+                    display: block;
+                    padding-left: 0;
+                    strong {
+                        width: auto;
+                        margin-right: 10px;
+                        padding-left: 25px;
+                        display: inline-block;
+                        box-sizing: border-box;
+                    }
+                }
+                .btn {
+                    display: block;
+                    margin-top: 10px;
+                }
+                &+ .form_box { 
+                }
+            }
+        }
+    }
+    // 메인
+    .main_container{  
+        position: relative;
+        z-index: 9;
+        .visual_slider { 
+            .swiper-slide {
+                height: calc(100vh - 455px); 
+                min-height: 570px;
+                &.slider01 { 
+                    background: url('../assets/images/pc/main_slider_img01.jpg') center no-repeat;
+                    background-size: cover;
+                }
+                &.slider02 { 
+                    background: url('../assets/images/pc/main_slider_img02.jpg') center no-repeat;
+                    background-size: cover;
+                }
+                .text {
+                    position: absolute;
+                    left: 35px;
+                    top: 10%; 
+                    width: auto;
+                    margin-top: 0;
+                    margin-left: 0;
+                    .text_01 { 
+                        color: #fff;
+                        margin-bottom: 18px; 
+                        font-size: 35px;
+                        line-height: 45px;
+                        font-weight: 300;
+                    }
+                    .text_02 {  
+                        color: #fff;
+                        font-size: 17px;
+                        line-height: 25px; 
+                        br {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .swiper-button-prev{  
+                margin-left: 0; 
+                left: 40px;
+            }
+            .swiper-button-next{
+                margin-left: 0; 
+                left: 110px;
+            }
+        }
+        .notice_wrap {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: transparent linear-gradient(91deg, #005175 0%, #127CAC 100%) 0% 0% no-repeat padding-box;
+            z-index: 10;
+            margin-left: 0;
+            height: 162px;
+            padding-top: 20px; 
+            padding-left: 32px;
+            box-sizing: border-box;
+            dt {
+                float: none;
+                width: auto;
+                text-align: left;
+                font-size: 19px;
+                line-height: 30px;
+                margin-bottom: 23px;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: auto;
+                    left: 0;
+                    top: 15px;
+                    border-bottom: 3px solid #fff;
+                    border-right: 0;
+                    width: 22px;
+                }
+            }
+            dd {
+                float: none;
+                padding-left: 0;
+                width: 100%;
+                box-sizing: border-box; 
+                a.link{
+                    display: block;
+                    font-size: 14px;
+                    span {
+                        display: block;
+                        margin-bottom: 6px;
+                    }
+                }
+                a.btn_more {
+                    position: absolute;
+                    right: 25px;
+                    top: 22px;  
+                    letter-spacing: 0px; 
+                    span {
+                        display: block;
+                        width: 0;
+                        height: 0;
+                        overflow: hidden;
+                        text-indent: -999px;
+                    }
+                    &:before{ 
+                        top: 4px;
+                        right: 8px; 
+                        height: 18px; 
+                    } 
+                    &:after{ 
+                        top: 13px; 
+                        width: 18px; 
+                    } 
+                }
+            }
+        }
+    }
+
+
+    // 소개
+    .intro_container {
+        .about_wrap {
+            min-width: auto;
+            padding-top: 0;
+            .section_01{
+                width: auto;
+                height: auto; 
+                margin-bottom: 20px;
+                h3 {
+                    padding: 25px 20px 10px;
+                    font-size: 30px;
+                }
+                p {
+                    padding: 0 20px 50px;
+                    font-size: 15px;
+                }
+                &::after {
+                    position: static;
+                    display: block;
+                    width: auto;
+                    background-position: center 0;
+
+                }
+            }
+            .section_02{
+                width: auto;
+                padding-left: 0;
+                height: auto;
+                h3 {
+                    padding: 25px 20px 10px;
+                    font-size: 30px;
+                }
+                p {
+                    padding: 0 20px 50px;
+                    font-size: 15px;
+                }
+                &::after {
+                    position: static;
+                    display: block;
+                    width: auto;
+                    background-position: center 0;
+                }
+            }
+        }
+        .terms_wrap {
+            padding: 25px 20px;
+        }
+        .notices_wrap{
+            .search_wrap .search_form {
+                float: none;
+                width: auto;
+                display: flex;
+                padding-right: 40px;
+                select {
+                    width: 90px;
+                }
+                input {
+                    width: 100%;
+                }
+            }
+            padding: 25px 20px;
+            .table_list{
+                margin-bottom: 25px;
+                col:nth-child(1),
+                td:nth-child(1),
+                th:nth-child(1),
+                col:nth-child(3),
+                td:nth-child(3),
+                th:nth-child(3),
+                td:nth-child(5),
+                col:nth-child(5),
+                th:nth-child(5){
+                    display: none;
+                }
+            }
+            .page_wrap {padding-bottom: 25px;}
+            .table_footer .rtl{position: static; float: right;}
+        }
+    }
+    
+    
+    // 지진관측소
+    .observatory_container {
+        .observatory_wrap .flex_box {
+            .list {
+               display: none;
+            }
+            .map {
+                width: 100%;
+            }
+        }
+        .metadata_wrap {
+            padding: 25px 20px; 
+            @media (max-width: 768px) { 
+                .table_view { 
+                    .form_box {
+                        .radio_01 { 
+                            overflow: hidden;
+                        }
+                        .entry {
+                            width: 60px;
+                        }
+                        .box {
+                            display: block;
+                            padding-left: 0;
+                            strong { 
+                                padding-left: 25px;
+                                display: inline-block;
+                                box-sizing: border-box;
+                            }
+                        }
+                        .btn {
+                            display: block;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+            .btn_wrap {
+                a {
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+        }
+    
+    }
+
+    // 지진관측자료
+    .data_container {
+        .eventdata_wrap { 
+            padding: 25px 20px; 
+            .btn_wrap a {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        .mobile_scroll {
+            overflow-x: auto;
+            width: 100%;
+            table {
+                width: 1000px;
+            }
+        }
+        .continuousdata_wrap {
+            padding: 25px 20px; 
+            .text_cation_02 { 
+                & + .form_box {
+                    margin-top: 10px;
+                }
+            }
+            .section_01 {
+                display: block;
+                h4 {
+                    margin-bottom: 10px;
+                }
+                ul {
+                    display: block;
+                    padding-bottom: 30px;
+                    li {padding-bottom: 10px;}
+                }
+            }
+            .btn_wrap a {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        .webservices_wrap {
+            padding: 25px 20px; 
+        }
+    }
+
+    // 지진 분석 정보
+    .analysis_container {
+        .majorearthquakes_wrap {
+            padding: 25px 20px; 
+            .table_view .form_box .radio_01 {
+                width: auto;
+            }
+            .btn_wrap a {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        .annualreport_wrap{
+            padding: 25px 20px; 
+            .btn_wrap a {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        .kesmdb_wrap {
+            padding: 25px 20px; 
+            .m_flex_none {
+                display: block;
+            }
+            .form_box {
+                .group_m {
+                    margin-left: 20px;
+                    padding:5px 0 10px;
+                }
+                .entry.date {
+                    width: 100px;
+                }
+            }
+            .btn_wrap a {
+                width: 100%;
+                margin: 0;
+            }
+            .mobile_scroll {
+                overflow-x: auto;
+                width: 100%;
+                table {
+                    width: 1000px;
+                }
+            }
+            .section_01 {
+                display: block;
+                padding-bottom: 10px;
+                h4 {
+                    margin-bottom: 10px;
+                }
+                ul {
+                    display: block;
+                    li {
+                        padding-bottom: 10px;
+                    }
+                }
+                .checkbox_01 {margin-left: 0;margin-right: 10px;}
+            }
+        }
+    }
+
+    .extend_menu {
+        .search {
+            display: flex;
+            span {
+                white-space: nowrap;
+            }
+            input {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+        ul li {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+    .extend {
+        padding:0 20px;
+        li {
+            display: block;
+            .col:first-child {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .modal_popup .stationsDetail_popup {
+        .table_view {
+            margin-bottom: 20px;
+            col {
+                display: none;
+            }
+            width: 100%;
+            tr {
+                display: flex;
+                width: 100%; 
+                position: relative;
+                flex-wrap: wrap; 
+                th {
+                    width: 30%;
+                    display: inline-flex;
+                    box-sizing: border-box;
+                    align-items: center;
+                    justify-content: center;
+                }
+                td {
+                    width: 70%;
+                    box-sizing: border-box;
+                    display: inline-flex;
+                    box-sizing: border-box;
+                    align-items: center;
+                    justify-content: flex-start
+                }
+            }
+        }
+        .flex_box {
+            display: block;
+            section {
+                width: 100%;
+                & + section {
+                    margin-top: 30px;
+                }
+            }
+        }
+    } 
+}  

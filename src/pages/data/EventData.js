@@ -47,8 +47,10 @@ const EventData = () => {
                                         <label className="radio_01"><input type="radio" name="magnitude" /><span>2.5+</span></label>
                                         <label className="radio_01"><input type="radio" name="magnitude" /><span>3.0+</span></label> 
                                         <label className="radio_01"><input type="radio" name="magnitude" /><span>4.0+</span></label> 
-                                        <label className="radio_01"><input type="radio" name="magnitude" /><span>직접 입력</span></label> 
-                                        <input type="text" className="entry" /> ~ <input type="text" className="entry" />
+                                        <span className="group_m">
+                                            <label className="radio_01"><input type="radio" name="magnitude" /><span>직접 입력</span></label> 
+                                            <input type="text" className="entry" /> ~ <input type="text" className="entry" />
+                                        </span>
                                         <span className="text_cation"><span>!</span> 규모를 입력해주세요.</span>
                                     </div>  
                                 </td> 
@@ -108,7 +110,7 @@ const EventData = () => {
                         </select>
                     </div>
 
-                    <div className="table_list line">
+                    <div className="table_list line mobile_scroll">
                         <table summary="이벤트파형 목록">
                             <colgroup>
                                 <col style={{"width":"5%","minWidth":"40px"}} />
@@ -159,6 +161,7 @@ const EventData = () => {
                         <Page />
                     </div> 
                 </section>
+                
             </main>
             
             {/* Footer */}

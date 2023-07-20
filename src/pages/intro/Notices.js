@@ -106,6 +106,7 @@ const Notice = () => {
                         <Link to="/intro/noticesWrite" className="btn_big rtl">글쓰기</Link>
                     </div>
                 </section>
+                
             </main>
             
             {/* Footer */}

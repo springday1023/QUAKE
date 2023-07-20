@@ -46,6 +46,7 @@ const Terms = () => {
                         </ul>
                     </section>
                 </div>
+                
             </main>
             
             {/* Footer */}

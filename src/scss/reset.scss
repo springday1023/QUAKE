@@ -100,13 +100,18 @@ select {
 		display: block;
 	}
 }
-
+.pc {
+	display: inline-block !important;
+    @media (max-width: 768px) {
+		display: none !important;
+	 }
+}
 .checkbox_01 {
 	display: inline-block;
 	overflow: hidden;
 	position: relative;
 	vertical-align: middle;
-	span {
+	& > span {
 		position: relative; 
 		cursor: pointer;
 		display: inline-block;
@@ -191,7 +196,7 @@ select {
 	overflow: hidden;
 	position: relative;
 	vertical-align: middle;
-	span {
+	& > span {
 		position: relative; 
 		cursor: pointer;
 		display: inline-block;
@@ -269,7 +274,7 @@ select {
 	overflow: hidden;
 	position: relative;
 	vertical-align: middle;
-	span {
+	& > span {
 		position: relative;
 		padding-left: 25px;
 		margin-right: 10px;

@@ -50,20 +50,20 @@ const Metadata = () => {
                                         <label className="radio_01"><input type="radio" name="selectorType" /><span>전체</span></label>
                                     </div>
                                     <div className="form_box">
-                                        <label className="radio_01"><input type="radio" name="selectorType" /><span>위도 범위</span></label>
-                                        <input type="text" className="entry" /> ~ <input type="text" className="entry" />
+                                        <label className="radio_01"><input type="radio" name="selectorType" /><span>위도<span className="pc"> 범위</span></span></label>
+                                        <input type="text" className="entry" placeholder="35.0" /> ~ <input type="text" className="entry" placeholder="38.0" />
                                         <span className="box">
-                                            <strong>경도 범위</strong>
-                                            <input type="text" className="entry" /> ~ <input type="text" className="entry" />
+                                            <strong>경도<span className="pc"> 범위</span></strong>
+                                            <input type="text" className="entry" placeholder="126.0" /> ~ <input type="text" className="entry" placeholder="129.0" />
                                         </span>
                                         <span className="text_cation"><span>!</span> 위도 범위를 입력해주세요.</span>
                                     </div>
                                     <div className="form_box">
-                                        <label className="radio_01"><input type="radio" name="selectorType" /><span>위경도 중심</span></label>
-                                        <input type="text" className="entry" />, <input type="text" className="entry" />
+                                        <label className="radio_01"><input type="radio" name="selectorType" /><span><span className="pc">위경도 </span>중심</span></label>
+                                        <input type="text" className="entry" placeholder="36.3" />, <input type="text" className="entry" placeholder="127.5" />
                                         <span className="box">
                                             <strong>반경</strong>
-                                            <input type="text" className="entry" /> km
+                                            <input type="text" className="entry" placeholder="30" /> km
                                         </span>
                                     </div>
                                     <div className="form_box">
@@ -74,7 +74,7 @@ const Metadata = () => {
                                         </span>
                                         <div className="extend_menu">
                                             <div className="search">
-                                                검색 <input type="text" placeholder="입력하세요" className="search_entry" />
+                                                <span>검색</span> <input type="text" placeholder="입력하세요" className="search_entry" />
                                             </div>
                                             <ul>
                                                 <li><label className="checkbox_02"><input type="checkbox" name="selectorType" /><span>AJD (안좌도)</span></label></li>
@@ -161,6 +161,7 @@ const Metadata = () => {
                         <Link to="/" className="btn_big">다운로드</Link>
                     </div>
                 </section>
+                
             </main>
             
             {/* Footer */}

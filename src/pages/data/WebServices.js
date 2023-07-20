@@ -97,6 +97,7 @@ const EventData = () => {
                         <li><a href="https://docs.obspy.org/packages/obspy.clients.fdsn.html" target="_blank" rel="noreferrer">ObsPy API Document(FDSN web service client for ObsPy)</a></li>
                     </ol>
                 </section>
+                
             </main>
             
             {/* Footer */}

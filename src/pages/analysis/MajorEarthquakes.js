@@ -58,6 +58,7 @@ const MajorEarthquakes = () => {
                         내용 출력
                     </div>
                 </section>
+                
             </main>
             
             {/* Footer */}

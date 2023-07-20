@@ -63,7 +63,7 @@ const Stations = () => {
                                         <span>센서종류: <span>가속도, 단주기</span></span>
                                     </div>
                                     <div className="rtl">
-                                        <button type="button" className="modal_trigger" >상세정보</button>
+                                        <button type="button" className="modal_trigger" onClick={openModal}>상세정보</button>
                                     </div>
                                     <button type="button" className="btn_close"><span>닫기</span></button>
                                 </section>
@@ -195,7 +195,7 @@ const Stations = () => {
             <div className={ isShown ? 'modal_popup show' : 'modal_popup'}>
                 <section className="modal">
                     <h2>관측소 상세 정보 - <span>덕천 (DUC)</span></h2> 
-                    <div className="detail_popup">
+                    <div className="stationsDetail_popup">
                         <table className="table_view">
                             <colgroup>
                                 <col style={{"width":"150px"}} />

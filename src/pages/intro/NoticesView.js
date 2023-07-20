@@ -99,6 +99,7 @@ const NoticeView = () => {
                         <Link to="/intro/Notices" className="btn_big">목록</Link>
                     </div>
                 </section>
+                
             </main>
             
             {/* Footer */}

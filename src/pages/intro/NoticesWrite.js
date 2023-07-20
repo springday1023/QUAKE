@@ -75,6 +75,7 @@ const NoticeView = () => {
                         <Link to="/intro/Notices" className="btn_big">작성완료</Link>
                     </div>
                 </section>
+                
             </main>
             
             {/* Footer */}

@@ -37,6 +37,7 @@ const About = () => {
                         <p>EIDA is the European Integrated Data Archive infrastructure within ORFEUS to provide access to seismic waveform data in European archives.</p>
                     </section>
                 </div>
+                
             </main>
             
             {/* Footer */}

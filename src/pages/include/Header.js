@@ -1,16 +1,20 @@
-import React from 'react'; 
+import React, {useState} from 'react'; 
 import { Link } from 'react-router-dom';
 const Header = (props) => {  
+    const [isHamToggle, setHamToggle] = useState(false);
+    const hambugerMenuSwitchHandler = () => {
+        setHamToggle(!isHamToggle);
+    };
     return (
         <>
             <p className="a11y_link"><a href="#body_container">본문 바로가기</a></p>
-            <header className={'header_container active ' + props.subPageCheck}>
+            <header className={'header_container  active' + props.subPageCheck}>{/* 오픈 상태일때는 active */}
                 <div className="inner">
                     <h1 className="logo"><Link to="/" className="parents">지오빅데이터 오픈플랫폼</Link><Link to="/" className="index">지진연구정보</Link></h1>
-                    <nav>
+                    <nav className={isHamToggle ? "close" : ""}> {/* 오픈 상태일때는 close */}
                         <ul>
-                            <li>
-                                <Link  className="link menu1 on" to="/intro/about">소개</Link>
+                            <li className="">{/* 오픈 상태일때는 on */}
+                                <Link  className="link menu1" to="/intro/about">소개</Link>
                                 <div className="sub_menu">
                                     <ul>
                                         <li><Link to="/intro/About">서비스 소개</Link></li>
@@ -60,6 +64,7 @@ const Header = (props) => {
                             </li>
                         </ul>
                     </nav>
+                    <button type="button" className="btn_ham" onClick={hambugerMenuSwitchHandler}><span>{isHamToggle  ? '메뉴 닫기' : '메뉴 열기'}</span></button>
                 </div>
             </header>
         </>

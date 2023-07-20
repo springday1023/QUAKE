@@ -78,7 +78,7 @@ const EventData = () => {
                                         </span>
                                         <div className="extend_menu">
                                             <div className="search">
-                                                검색 <input type="text" placeholder="입력하세요" className="search_entry" />
+                                                <span>검색</span> <input type="text" placeholder="입력하세요" className="search_entry" />
                                             </div>
                                             <ul>
                                                 <li><label className="checkbox_02"><input type="checkbox" name="selectorType" /><span>AJD (안좌도)</span></label></li>
@@ -238,6 +238,7 @@ const EventData = () => {
                     </div>
                       
                 </section>
+                
             </main>
             
             {/* 선택 채널 목록 popup */}
