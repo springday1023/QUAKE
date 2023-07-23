@@ -54,13 +54,13 @@
 						&.on{ 
 							z-index: 90;
 							> a {
-								border-bottom: 2px solid #fff;
+								border-bottom: 2px solid #075b81;
 								color: #fff;
 							}
 							.sub_menu{
-								width: 260px;
+								// width: 260px;
 								display: block;
-								border: 0;
+								// border: 0;
 								z-index: 99;
 							}
 						}
@@ -71,7 +71,8 @@
 							display: inline-block;
 							width: 150px;
 							text-align: center;
-							line-height: 78px; 
+							line-height: 76px; 
+							border-bottom: 2px solid transparent;
 						}
 						.sub_menu{
 							position: absolute;
