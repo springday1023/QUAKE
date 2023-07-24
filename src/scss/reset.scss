@@ -111,6 +111,7 @@ select {
 	overflow: hidden;
 	position: relative;
 	vertical-align: middle;
+	margin-right: 20px;
 	& > span {
 		position: relative; 
 		cursor: pointer;
@@ -185,9 +186,9 @@ select {
 			transform-origin: 100% 100%;
 		}
 			 
-	}
-	& + .checkbox_01  {
-		margin-left: 20px;
+	} 
+	&:last-child {
+		margin-right: 0;
 	}
 }
 
@@ -196,6 +197,7 @@ select {
 	overflow: hidden;
 	position: relative;
 	vertical-align: middle;
+	margin-right: 20px;
 	& > span {
 		position: relative; 
 		cursor: pointer;
@@ -263,8 +265,8 @@ select {
 		}
 			 
 	}
-	& + .checkbox_02  {
-		margin-left: 20px;
+	&:last-child {
+		margin-right: 0;
 	}
 }
 
@@ -274,6 +276,7 @@ select {
 	overflow: hidden;
 	position: relative;
 	vertical-align: middle;
+	margin-right: 20px;
 	& > span {
 		position: relative;
 		padding-left: 25px;
@@ -330,8 +333,8 @@ select {
 		}
 			 
 	}
-	& + .radio_01  {
-		margin-left: 20px;
+	&:last-child {
+		margin-right: 0;
 	}
 }
  

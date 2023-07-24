@@ -153,10 +153,8 @@
         }
     }
 }
-
-
-// 소개
-.intro_container {
+  
+.sub_container {
 
     //소개
     .about_wrap{
@@ -336,14 +334,10 @@
             padding: 15px 0;
         }
     }
-}
 
-
-// 지진관측소
-.observatory_container{
-    .observatory_wrap{
+    .contents_wrap{
         @include defaultLayout;
-        .flex_box {
+        .observatory {
             display: flex;
             .map {
                 width: 50%;
@@ -459,34 +453,8 @@
                     }
                 }
             }
-        }
-    }
-    .metadata_wrap{
-        @include defaultLayout;
-        .metadata {
-            margin-bottom: 20px;
-        }
-    }
-}
-
-
-// 지진관측자료
-.data_container { 
-    .eventdata_wrap{
-        @include defaultLayout;
-        .table_view, .table_list {
-            margin-bottom: 20px;
-        }
-		.table_footer{
-			margin-top: 20px;
-		}
-    }
-    .continuousdata_wrap{
-        @include defaultLayout;
-        .table_view {
-            margin-bottom: 20px;
-        }
-        .section_01 {
+        }  
+        .continuousdata_01 {
             display: flex;
             ul {
                 margin-left: 20px;
@@ -496,118 +464,81 @@
                 }
             }
         }
-        .btn_wrap {
-            a {
-                width: 270px;
-            }
-        }
-    }
-    .webservices_wrap{
-        @include defaultLayout;
-        
-			a {
-				color: $link-color !important;
-			}
-    }
-}
-
-
-// 지진 분석 정보
-.analysis_container { 
-    .majorearthquakes_wrap,  
-    .annualreport_wrap{
-        @include defaultLayout;
-        .table_view  {
-            margin-bottom: 20px; 
-            .checkbox_01,
-            .radio_01 {
-                margin-right: 10px;
-            } 
-            .flex_box > div { 
-                margin-bottom: 10px; 
-            }
-        } 
-        .btn_wrap {
-            a {
-                width: 270px;
-            }
-        }
-    }
-    .kesmdb_wrap{
-
-        @include defaultLayout;
-            
-        .table_view  {
-            margin-bottom: 20px; 
-            .checkbox_01,
-            .radio_01 {
-                margin-right: 10px;
-            } 
-            .flex_box > div{margin-bottom: 10px;}
-            th {
-                position: relative;
-                .text_quote {
-                    position: absolute;
-                    bottom: 10px;
-                    left: 0;
-                    width: 100%;
-                    text-align: center;
-                    font-size: 12px;
-                    font-weight: normal;
-                    @media (max-width: 768px) {  
-                        position: static;
-                        width: auto;
-                        margin-left: 20px;
-                    }
-                    &::before{
-                        @include googleIconFont('error',12px);  
+         
+        &.kesmdb{
+ 
+            .table_view  {  
+                .flex_box > div{margin-bottom: 10px;}
+                th {
+                    position: relative;
+                    .text_quote {
+                        position: absolute;
+                        bottom: 10px;
+                        left: 0;
+                        width: 100%;
+                        text-align: center;
+                        font-size: 12px;
+                        font-weight: normal;
+                        @media (max-width: 768px) {  
+                            position: static;
+                            width: auto;
+                            margin-left: 20px;
+                        }
+                        &::before{
+                            @include googleIconFont('error',12px);  
+                        }
                     }
                 }
+            }  
+            .text_cation_02 { 
+                margin-bottom: 10px;
+                a {
+                    text-decoration: none;
+                }
             }
-        } 
-        .btn_wrap {
-            a {
-                width: 270px;
+            .table_footer, 
+            .table_list  {
+                margin-bottom: 40px;
+                td {
+                    cursor: pointer;
+                }
+                button {
+                    color:  $link-color;
+                }
             }
-        }
-        .text_cation_02 { 
-            margin-bottom: 10px;
-            a {
-                text-decoration: none;
-            }
-        }
-        .table_footer, 
-        .table_list  {
-            margin-bottom: 40px;
-            td {
-                cursor: pointer;
-            }
-            button {
-                color:  $link-color;
-            }
-        }
-        .section_01 {
-            display: flex;
-            ul {
-                margin-left: 20px;
+            .section_01 {
                 display: flex;
-                li {
-                    margin-right: 10px;
+                ul {
+                    margin-left: 20px;
+                    display: flex;
+                    li {
+                        margin-right: 10px;
+                    }
+                }
+                .sub_form {
+                    margin: 10px 20px 20px;
                 }
             }
-            .sub_form {
-                margin: 10px 20px 20px;
+            .text_terms {
+                text-align: center;
+                padding:30px 0 20px;
+                a {
+                    color: $link-color;
+                }
             }
-        }
-        .text_terms {
-            text-align: center;
-            padding:30px 0 20px;
+        } 
+        .btn_wrap {
             a {
-                color: $link-color;
+                width: 270px;
             }
+        } 
+        .wiki a {
+            color: $link-color !important;
         }
     } 
 }
+
+  
 
 
 // 팝업

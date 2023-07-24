@@ -21,7 +21,7 @@ const AnnualReport = () => {
             <Header subPageCheck="sub_header" />
             
             {/* Contents Body */}
-            <main className="analysis_container">
+            <main className="sub_container">
                 
                 {/* Page Title */}
                 <PageHeader mainTitle="K-ESM DB" /> 
@@ -38,7 +38,7 @@ const AnnualReport = () => {
                 </div>
                 
                 {/* Content */}
-                <section className="kesmdb_wrap"> 
+                <section className="contents_wrap kesmdb"> 
                     <h3 className="hide">K-ESM DB 조회</h3>  
                     <p className="text_notice"><span>?</span>K-ESM (KIGAM Engineering Strong Motion) DB는 관측소 단위의 가속도 관측기록의 검색, 가공 및 다운로드 기능을 제공합니다.</p>
                     

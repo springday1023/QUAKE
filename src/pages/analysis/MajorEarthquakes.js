@@ -12,7 +12,7 @@ const MajorEarthquakes = () => {
             <Header subPageCheck="sub_header" />
             
             {/* Contents Body */}
-            <main className="analysis_container">
+            <main className="sub_container">
                 
                 {/* Page Title */}
                 <PageHeader mainTitle="한반도 주요지진" /> 
@@ -29,11 +29,11 @@ const MajorEarthquakes = () => {
                 </div>
                 
                 {/* Content */}
-                <section className="majorearthquakes_wrap"> 
+                <section className="contents_wrap"> 
                     <h3 className="hide">한반도 주요지진 조회</h3>  
                     <p className="text_notice"><span>?</span>최근 발생한 한반도 주요 지진 및 여진에 대한 확대/축소/돌려보기 기능을 제공합니다.</p>
                     
-                    <table className="table_view bdt2 metadata" summary="이벤트파형자료 조회 조건">
+                    <table className="table_view bdt2" summary="이벤트파형자료 조회 조건">
                         <colgroup>
                             <col style={{"width":"250px"}} />
                             <col style={{"width":"auto"}} /> 

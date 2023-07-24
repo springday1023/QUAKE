@@ -13,7 +13,7 @@ const EventData = () => {
             <Header subPageCheck="sub_header" />
             
             {/* Contents Body */}
-            <main className="data_container">
+            <main className="sub_container">
                 
                 {/* Page Title */}
                 <PageHeader mainTitle="이벤트파형자료" />  
@@ -30,11 +30,11 @@ const EventData = () => {
                 </div>
                 
                 {/* Content */}
-                <section className="eventdata_wrap"> 
+                <section className="contents_wrap"> 
                     <h3 className="hide">이벤트파형자료 조회</h3>  
                     <p className="text_notice"><span>?</span>지진 단위 이벤트파형자료 묶음의 검색 및 다운로드 기능을 제공합니다.</p>
                     
-                    <table className="table_view bdt2 metadata" summary="이벤트파형자료 조회 조건">
+                    <table className="table_view bdt2" summary="이벤트파형자료 조회 조건">
                         <colgroup>
                             <col style={{"width":"150px"}} />
                             <col style={{"width":"auto"}} /> 

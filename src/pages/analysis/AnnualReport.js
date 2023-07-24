@@ -12,7 +12,7 @@ const AnnualReport = () => {
             <Header subPageCheck="sub_header" />
             
             {/* Contents Body */}
-            <main className="analysis_container">
+            <main className="sub_container">
                 
                 {/* Page Title */}
                 <PageHeader mainTitle="지진학술연보" /> 
@@ -29,11 +29,11 @@ const AnnualReport = () => {
                 </div>
                 
                 {/* Content */}
-                <section className="annualreport_wrap"> 
+                <section className="contents_wrap"> 
                     <h3 className="hide">지진학술연보 조회</h3>  
                     <p className="text_notice"><span>?</span>지진연구센터에서 발행한 지진학술연보의 다운로드 기능을 제공합니다.</p>
                     
-                    <table className="table_view bdt2 metadata" summary="이벤트파형자료 조회 조건">
+                    <table className="table_view bdt2" summary="이벤트파형자료 조회 조건">
                         <colgroup>
                             <col style={{"width":"250px"}} />
                             <col style={{"width":"auto"}} /> 

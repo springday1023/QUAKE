@@ -18,7 +18,7 @@ const Stations = () => {
             <Header subPageCheck="sub_header" />
 
             {/* Contents Body */}
-            <main className="observatory_container">
+            <main className="sub_container">
                 
                 {/* Page Title */}
                 <PageHeader mainTitle="관측소 정보" /> 
@@ -35,9 +35,9 @@ const Stations = () => {
                 </div>
 
                 {/* Content */}
-                <section className="observatory_wrap"> 
+                <section className="contents_wrap"> 
                     <h3 className="hide">관측소 목록</h3>
-                    <div className="flex_box"> 
+                    <div className="observatory"> 
                         <div className="map">
                             <div className="solt">
                                 <h4>설치유형 선택</h4>

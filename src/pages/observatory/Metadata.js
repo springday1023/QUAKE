@@ -12,7 +12,7 @@ const Metadata = () => {
             <Header subPageCheck="sub_header" />
             
             {/* Contents Body */}
-            <main className="observatory_container">
+            <main className="sub_container">
                 
                 {/* Page Title */}
                 <PageHeader mainTitle="메타데이터" /> 
@@ -29,7 +29,7 @@ const Metadata = () => {
                 </div>
 
                 {/* Content */}
-                <section className="metadata_wrap"> 
+                <section className="contents_wrap"> 
                     <h3 className="hide">메타데이터 다운로드</h3> 
                     <p className="text_notLogin">
                         <span>?</span>로그인이 필요한 서비스입니다.
@@ -37,7 +37,7 @@ const Metadata = () => {
                     </p>
                     <p className="text_notice"><span>?</span>서비스 중인 지진관측자료의 메타데이터(2016년 이후, 변경이력 포함) 다운로드 기능을 제공합니다.</p>
                     
-                    <table className="table_view bdt2 metadata" summary="메타데이터 검색 조건">
+                    <table className="table_view bdt2" summary="메타데이터 검색 조건">
                         <colgroup>
                             <col style={{"width":"150px"}} />
                             <col style={{"width":"auto"}} /> 

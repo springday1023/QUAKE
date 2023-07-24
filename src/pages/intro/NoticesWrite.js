@@ -11,7 +11,7 @@ const NoticeView = () => {
             <Header subPageCheck="sub_header" />
             
             {/* Contents Body */}
-            <main className="intro_container">
+            <main className="sub_container">
                 
                 {/* Page Title */}
                 <PageHeader mainTitle="공지사항" />  

@@ -12,7 +12,7 @@ const About = () => {
             <Header subPageCheck="sub_header" />
             
             {/* Contents Body */}
-            <main className="intro_container"> 
+            <main className="sub_container"> 
                 
                 {/* Page Title */}
                 <PageHeader mainTitle="서비스 소개" />  

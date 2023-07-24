@@ -440,9 +440,13 @@
 
 			}
 		}
+		& + .text_cation_02 {
+			margin-top: 10px;
+		}
 	} 
 	.table_view { 
 		width: 100%; 
+		margin-bottom: 20px;
 		th {
 			border-top: 1px solid #e0e0e0;
 			border-bottom: 1px solid #e0e0e0;
@@ -470,7 +474,7 @@
 		} 
 		&.bdt2 {
 			border-top: 2px solid $point-color;
-		} 
+		}  
 	}
 
 	.page_wrap {

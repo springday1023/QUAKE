@@ -20,7 +20,7 @@ const EventData = () => {
             <Header subPageCheck="sub_header" />
             
             {/* Contents Body */}
-            <main className="data_container">
+            <main className="sub_container">
                 
                 {/* Page Title */}
                 <PageHeader mainTitle="연속파형자료" />  
@@ -37,11 +37,11 @@ const EventData = () => {
                 </div>
                 
                 {/* Content */}
-                <section className="continuousdata_wrap"> 
+                <section className="contents_wrap"> 
                     <h3 className="hide">연속파형자료 조회</h3>  
                     <p className="text_notice"><span>?</span>관측소(채널) 단위의 연속파형자료 검색 및 다운로드 기능을 제공합니다.</p>
                     
-                    <table className="table_view bdt2 metadata" summary="연속파형자료 조회 조건 선택">
+                    <table className="table_view bdt2" summary="연속파형자료 조회 조건 선택">
                         <colgroup>
                             <col style={{"width":"150px"}} />
                             <col style={{"width":"auto"}} /> 
@@ -215,7 +215,7 @@ const EventData = () => {
                             </tr>  
                         </tbody>
                     </table>
-                    <section className="section_01">
+                    <section className="continuousdata_01">
                         <h4 className="sub_title">자료 형식</h4>
                         <ul>
                             <li><label className="radio_01"><input type="radio" name="selectorType" /><span>miniSEED</span></label></li>
@@ -223,7 +223,7 @@ const EventData = () => {
                             <li><label className="radio_01"><input type="radio" name="selectorType" /><span>GeoCSV (ASCII)</span></label></li>
                         </ul>
                     </section>
-                    <section className="section_01">
+                    <section className="continuousdata_01">
                         <h4 className="sub_title">활용 목적</h4>
                         <ul>
                             <li><label className="radio_01"><input type="radio" name="selectorType" /><span>연구(자연과학)</span></label></li>
