@@ -163,7 +163,9 @@
 						}
 					}
 				}
-				.btn_ham{display: none;}
+				.btn_ham{
+					display: none;
+				}
 			}
 		}
 		&.sub_header {
@@ -343,7 +345,7 @@
 	.table_hd {
 		padding-bottom: 15px;
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
 		justify-content: space-between;
 		select {
 			width: 100px;
@@ -545,7 +547,9 @@
 
 	// 버튼
 	.btn_wrap {
-		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		padding-bottom: 50px;
 		a {
 			margin: 0 10px;
@@ -1140,8 +1144,17 @@
 	}
 
 	.modal_popup .modal {
-		padding: 20px;
+		padding: 20px 10px;
 		max-height: calc(100vh - 100px);
+		> h2 {
+			padding-right: 40px;
+			font-size: 18px;
+			margin-bottom: 20px;
+		}
+		.btn_close {
+			right: 10px;
+			top: 15px;
+		}
 	}
 
     @media (max-width: 768px) {  

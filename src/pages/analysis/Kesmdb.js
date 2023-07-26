@@ -42,7 +42,7 @@ const AnnualReport = () => {
                     <h3 className="hide">K-ESM DB 조회</h3>  
                     <p className="text_notice"><span>?</span>K-ESM (KIGAM Engineering Strong Motion) DB는 관측소 단위의 가속도 관측기록의 검색, 가공 및 다운로드 기능을 제공합니다.</p>
                     
-                    <table className="table_view bdt2 metadata" summary="K-ESM DB 조회 조건">
+                    <table className="table_view bdt2" summary="K-ESM DB 조회 조건">
                         <colgroup>
                             <col style={{"width":"250px"}} />
                             <col style={{"width":"auto"}} /> 
@@ -106,7 +106,7 @@ const AnnualReport = () => {
                                     <div className="form_box"> 
                                         <label className="radio_01"><input type="radio" name="period" /><span>조건 설정</span></label> 
                                     </div>
-                                    <div className="form_box flex_box"> 
+                                    <div className="form_box flex_box m_flex_none"> 
                                         <span className="text_label">위치 :</span>
                                         <div className="group_m">
                                             <div className="form_box"> 

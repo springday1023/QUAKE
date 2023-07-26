@@ -343,15 +343,13 @@
                 width: 50%;
                 box-sizing: border-box;
                 padding-right: 10px;
-                position: relative;
-                height: 800px;
+                position: relative; 
                 .solt {
                     position: absolute;
                     left: 10px;
                     top: 10px;
                     font-weight: 700;
-                    display: inline-block; 
-                    padding: 10px;
+                    display: inline-block;  
                     display:flex;
                     border-radius: 3px;
                     h4 {
@@ -367,15 +365,15 @@
                     }
                     ul {
                         padding:0 10px;
-                        height: 40px; 
-                        line-height: 40px;
+                        height: 40px;  
                         background: #fff;
                         box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.16);
                         border-radius: 4px;
-                        text-align: center;
+                        align-items: center;
                         display:flex;
                         span {
                             color: $point-color;
+                            white-space: nowrap;
                         }
                     }
                 }
@@ -675,6 +673,7 @@
 @media (max-width: 1279px) { 
         
     @media (max-width: 768px) { 
+          
         .table_view {
             margin-bottom: 20px;
             col {
@@ -728,7 +727,17 @@
                 .btn {
                     display: block;
                     margin-top: 10px;
+                }  
+                .entry {
+                    width: 60px;
                 } 
+            }
+        } 
+        
+	    .btn_wrap { 
+            a {
+                margin: 0;
+                width: 100% !important;
             }
         }
     }
@@ -737,8 +746,7 @@
         position: relative;
         z-index: 9;
         .visual_slider { 
-            .swiper-slide {
-                height: calc(100vh - 455px); 
+            .swiper-slide { 
                 min-height: 570px;
                 &.slider01 { 
                     background: url('../assets/images/pc/main_slider_img01.jpg') center no-repeat;
@@ -853,7 +861,7 @@
 
 
     // 소개
-    .intro_container {
+    .sub_container {
         .about_wrap {
             min-width: auto;
             padding-top: 0;
@@ -901,6 +909,7 @@
             padding: 25px 20px;
         }
         .notices_wrap{
+            padding: 25px 20px;
             .search_wrap .search_form {
                 float: none;
                 width: auto;
@@ -913,7 +922,6 @@
                     width: 100%;
                 }
             }
-            padding: 25px 20px;
             .table_list{
                 margin-bottom: 25px;
                 col:nth-child(1),
@@ -928,83 +936,37 @@
                     display: none;
                 }
             }
-            .page_wrap {padding-bottom: 25px;}
-            .table_footer .rtl{position: static; float: right;}
-        }
-    }
-    
-    
-    // 지진관측소
-    .observatory_container {
-        .observatory_wrap .flex_box {
-            .list {
-               display: none;
+            .page_wrap {
+                padding-bottom: 25px;
             }
-            .map {
-                width: 100%;
+            .table_footer .rtl{
+                position: static; 
+                float: right;
+            }
+            .content_print {
+                padding: 15px 0;
             }
         }
-        .metadata_wrap {
+        .contents_wrap {
             padding: 25px 20px; 
-            @media (max-width: 768px) { 
-                .table_view { 
-                    .form_box {
-                        .radio_01 { 
-                            overflow: hidden;
-                        }
-                        .entry {
-                            width: 60px;
-                        }
-                        .box {
-                            display: block;
-                            padding-left: 0;
-                            strong { 
-                                padding-left: 25px;
-                                display: inline-block;
-                                box-sizing: border-box;
-                            }
-                        }
-                        .btn {
-                            display: block;
-                            margin-top: 10px;
-                        }
-                    }
+            .observatory {
+                margin: 0 -20px;
+                .list {
+                display: none;
                 }
-            }
-            .btn_wrap {
-                a {
+                .map {
                     width: 100%;
-                    margin: 0;
+                    padding-right: 0;
                 }
             }
-        }
-    
-    }
-
-    // 지진관측자료
-    .data_container {
-        .eventdata_wrap { 
-            padding: 25px 20px; 
-            .btn_wrap a {
+            .mobile_scroll {
+                overflow-x: auto;
                 width: 100%;
-                margin: 0;
-            }
-        }
-        .mobile_scroll {
-            overflow-x: auto;
-            width: 100%;
-            table {
-                width: 1000px;
-            }
-        }
-        .continuousdata_wrap {
-            padding: 25px 20px; 
-            .text_cation_02 { 
-                & + .form_box {
-                    margin-top: 10px;
+                table {
+                    width: 1000px;
                 }
             }
-            .section_01 {
+            .continuousdata_01 {
                 display: block;
                 h4 {
                     margin-bottom: 10px;
@@ -1014,77 +976,49 @@
                     padding-bottom: 30px;
                     li {padding-bottom: 10px;}
                 }
-            }
-            .btn_wrap a {
-                width: 100%;
-                margin: 0;
-            }
-        }
-        .webservices_wrap {
-            padding: 25px 20px; 
-        }
-    }
-
-    // 지진 분석 정보
-    .analysis_container {
-        .majorearthquakes_wrap {
-            padding: 25px 20px; 
-            .table_view .form_box .radio_01 {
-                width: auto;
-            }
-            .btn_wrap a {
-                width: 100%;
-                margin: 0;
-            }
-        }
-        .annualreport_wrap{
-            padding: 25px 20px; 
-            .btn_wrap a {
-                width: 100%;
-                margin: 0;
-            }
-        }
-        .kesmdb_wrap {
-            padding: 25px 20px; 
-            .m_flex_none {
-                display: block;
-            }
-            .form_box {
-                .group_m {
-                    margin-left: 20px;
-                    padding:5px 0 10px;
-                }
-                .entry.date {
-                    width: 100px;
-                }
-            }
-            .btn_wrap a {
-                width: 100%;
-                margin: 0;
-            }
-            .mobile_scroll {
-                overflow-x: auto;
-                width: 100%;
-                table {
-                    width: 1000px;
-                }
-            }
-            .section_01 {
-                display: block;
-                padding-bottom: 10px;
-                h4 {
-                    margin-bottom: 10px;
-                }
-                ul {
+            } 
+            &.kesmdb {
+                .m_flex_none {
                     display: block;
-                    li {
-                        padding-bottom: 10px;
+                }
+                .form_box {
+                    .group_m {
+                        margin-left: 20px;
+                        padding:5px 0 10px;
+                    }
+                    .entry.date {
+                        width: 100px;
                     }
                 }
-                .checkbox_01 {margin-left: 0;margin-right: 10px;}
+                .btn_wrap a {
+                    width: 100%;
+                    margin: 0;
+                }
+                .mobile_scroll {
+                    overflow-x: auto;
+                    width: 100%;
+                    table {
+                        width: 1000px;
+                    }
+                }
+                .section_01 {
+                    display: block;
+                    padding-bottom: 10px;
+                    h4 {
+                        margin-bottom: 10px;
+                    }
+                    ul {
+                        display: block;
+                        li {
+                            padding-bottom: 10px;
+                        }
+                    }
+                    .checkbox_01 {margin-left: 0;margin-right: 10px;}
+                }
             }
         }
     }
+      
 
     .extend_menu {
         .search {
@@ -1119,20 +1053,21 @@
                 display: none;
             }
             width: 100%;
-            tr {
-                display: flex;
-                width: 100%; 
-                position: relative;
-                flex-wrap: wrap; 
+            tr { 
                 th {
                     width: 30%;
                     display: inline-flex;
                     box-sizing: border-box;
                     align-items: center;
+                    height: auto;
+                    margin-bottom: 10px;
                     justify-content: center;
                 }
                 td {
                     width: 70%;
+                    margin-bottom: 10px;
+                    padding-left: 10px;
+                    padding-right: 10px;
                     box-sizing: border-box;
                     display: inline-flex;
                     box-sizing: border-box;
