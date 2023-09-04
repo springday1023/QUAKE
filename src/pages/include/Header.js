@@ -110,4 +110,7 @@ const Header = (props) => {
     );
 };
 
+Header.defaultProps = {
+  subPageCheck: " "
+};
 export default Header;
