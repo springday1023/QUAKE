@@ -1,54 +1,4 @@
-﻿// Content Wrap: 컨텐츠 공통
-.content-wrap{
-
-    @media screen and (max-width: #{$pc-width - 1}) {
-        
-        
-        
-        
-        &.kesmdb {
-            .formbox {
-                .formbox__col {
-                    margin-left: 20px;
-                    padding:5px 0 10px;
-                }
-                .entry.date {
-                    width: 100px;
-                }
-            }
-            .button-area a {
-                width: 100%;
-                margin: 0;
-            }
-            .table--scroll {
-                overflow-x: auto;
-                width: 100%;
-                table {
-                    width: 1000px;
-                }
-            }
-            .section_01 {
-                display: block;
-                padding-bottom: 10px;
-                h4 {
-                    margin-bottom: 10px;
-                }
-                ul {
-                    display: block;
-                    li {
-                        padding-bottom: 10px;
-                    }
-                }
-                .checkbox {margin-left: 0;margin-right: 10px;}
-            }
-        }
-    }
-
-}
-
-
-
-/* Page: INTRO/ABOUT
+﻿/* Page: INTRO/ABOUT
 ----------------------------------------------- */
 .page-about{
     h3 {
@@ -268,17 +218,6 @@
             }
     
         }
-
-    }
-
-    .table-view {
-        
-        .entry_title {
-            border: 0;
-            width: 100%; 
-            height: 30px;
-        }
-        
     }
 
     @media screen and (max-width: $m-width) {
@@ -297,8 +236,6 @@
             }
         }
     }
-
-
 }
 
 
@@ -656,36 +593,3 @@
 
 
 
-
-
-
-
-.content-wrap{
-    
-     &.kesmdb{
-        .table-foot, 
-        .table-list  {
-            margin-bottom: 40px;
-            td {
-                cursor: pointer;
-            }
-            button {
-                color:  $link-color;
-            }
-        }
-    } 
-
-
-    
-    
-    
-    
-        
-    
-    .button-area {
-        a {
-            width: 270px;
-        }
-    } 
-    
-} 

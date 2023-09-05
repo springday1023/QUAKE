@@ -39,7 +39,7 @@ const NoticeView = () => {
                                 <tr>
                                     <th>제목</th>
                                     <td>
-                                        <input type="text" className="entry_title" placeholder="제목을 입력해주세요." />
+                                        <input type="text" className="input-text" placeholder="제목을 입력해주세요." />
                                     </td>
                                 </tr> 
                             </tbody>
