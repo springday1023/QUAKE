@@ -1,0 +1,82 @@
+﻿/* [C] Basic Modal Popup
+----------------------------------------------- */
+.modal-popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0, 0.3);
+    z-index: 9999;
+    align-items: center;
+    
+    // .modal-popup__inner
+    &__inner {
+        background-color: #fff;
+        width: 87%;
+        max-width: $pc-width - 20; 
+        min-width:300px;
+        margin: 0 auto;
+        padding: 35px;
+        box-sizing: border-box;
+        position: relative;
+        max-height: calc(100vh - 200px);
+        overflow-y: auto;
+        & > h2 {
+            font-size: 25px;
+            color: $point-color;
+            margin-bottom: 35px;
+        }
+    }
+
+    // .modal-popup__close
+    &__close {
+        position: absolute;
+        right: 30px;
+        top: 8px;
+        width: 36px;
+        height: 36px;
+        span {
+            display: none;
+        }
+        &::after{
+            @include googleIconFont('close', 36px); 
+            font-weight: bold;
+            color:#aaa;
+        }
+    }
+
+    // 상태 : .modal-popup--show
+    &--show {
+        display: flex;
+    }
+
+    @media screen and (max-width: #{$pc-width - 1}) {
+        // .modal-popup__inner
+        &__inner {
+            padding: 28px;
+            max-height: calc(100vh - 100px);
+            
+            > h2 {
+                padding-right: 40px;
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+        }
+
+        // .modal-popup__close
+        &__close {
+            right: 28px;
+            top: 16px;
+            width: 30px; 
+            height: 30px;
+            &::after{
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+
+

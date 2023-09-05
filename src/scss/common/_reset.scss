@@ -1,0 +1,78 @@
+/* reset
+--------------------------------*/
+html, body, *{-webkit-overflow-scrolling: touch;}
+html ,body {
+    margin:0; padding:0; 
+    font-family:"Pretendard Variable", "Roboto", "Noto Sans KR", -apple-system, BlinkMacSystemFont, sans-serif; 
+    font-weight:400;
+    font-size: 15px;  
+    line-height: 1.43;  
+    color: $base-font; 
+    -webkit-text-size-adjust:none; 
+}
+dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote {margin:0; padding:0; -webkit-text-size-adjust:none;}
+th,td, input,textarea,select, button {font-size:inherit; color:inherit; font-family:inherit; -webkit-text-size-adjust:none;}
+th,td {word-break:break-all; word-wrap:break-word; -webkit-text-size-adjust:none;}
+table {border-spacing:0; border-collapse:collapse; -webkit-text-size-adjust:none; border:0;}
+address,caption,cite,code,dfn,em,var {font-style:normal; font-weight:normal; -webkit-text-size-adjust:none;}
+em {font-weight:inherit;}
+ol,ul ,li {list-style:none;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;}
+abbr,acronym {border:0;}
+hr {clear:both; display:none;}
+legend, caption {visibility:hidden; overflow:hidden; line-height:0; width:0; height:0; margin:0; padding:0; text-indent:-99999px; font-size:0;}
+img, fieldset {border:0 none;}
+label {cursor:pointer;}
+a {cursor: pointer;color:#6b6b6b;text-decoration:none; -webkit-tap-highlight-color: transparent;}
+a:active {text-decoration:none;}
+
+input, img {vertical-align:middle;}
+input, button {border:1px solid #151515; border-radius:0;	box-shadow: none;}
+input:disabled {color:$font-color1; background-color: #f4f4f4;}
+button {cursor: pointer; border: 0;background-color: transparent;padding: 0;}
+textarea {resize:none; border:0;appearance: none; } 
+::placeholder { 
+	color: $font-color1;
+	opacity: 1; 
+}
+:-ms-input-placeholder { 
+	color:$font-color1;
+}
+::-ms-input-placeholder {
+	color: $font-color1;
+}
+input[type="number"]::placeholder,
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {color:$font-color1;}
+
+// 텍스트 숨김 등
+.hide {
+    position:absolute; 
+    visibility:hidden; 
+    overflow:hidden; 
+    height:0; 
+    line-height:0; 
+    width:0; 
+    margin:0; 
+    padding:0;
+}
+
+// 접근성 경로
+.a11y-link a {
+	position: absolute;
+    left: -999px;
+    top: 0;  
+	
+    &:focus {
+		position: static;
+		background-color: #000;
+		color: #fff;
+		font-size: 14px;
+		display: block;
+	}
+}
+
+
+

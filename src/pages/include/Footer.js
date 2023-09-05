@@ -1,8 +1,8 @@
 import React from 'react'; 
 const Footer = () => {
     return (
-        <footer className="footer_container">
-            <div className="quck_link">
+        <footer className="footer">
+            <div className="footer__link">
                 <a href="https://www.kigam.re.kr/menu.es?mid=a10906020000" target="_blank" rel="noreferrer">개인정보취급방침</a>
                 <span className="bar">|</span>
                 <a href="https://data.kigam.re.kr/about/email" target="_blank" rel="noreferrer">이메일집단수집거부</a>

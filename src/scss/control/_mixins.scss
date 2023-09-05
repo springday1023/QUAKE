@@ -1,0 +1,10 @@
+﻿// [C] Material Google Icons
+// --------------------------------------------- */
+@mixin googleIconFont($name, $fz) {
+	font-family: 'Material Symbols Outlined';   
+	vertical-align: middle;
+	font-size: $fz; 
+	display: inline-block;
+	content: $name; 
+}
+

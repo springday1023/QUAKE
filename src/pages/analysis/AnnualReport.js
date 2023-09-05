@@ -9,16 +9,16 @@ const AnnualReport = () => {
     return (
         <>
             {/* Header */}
-            <Header subPageCheck="sub_header" />
+            <Header subPageCheck="header--sub" />
             
             {/* Contents Body */}
-            <main className="sub_container">
+            <main className="content">
                 
                 {/* Page Title */}
                 <PageHeader mainTitle="지진학술연보" /> 
                 
                 {/* Location */}
-                <div className="location_wrap">
+                <div className="content-path">
                     <p className="inner">
                         <Link to="/" className="ico_home">
                         Home</Link>
@@ -29,11 +29,11 @@ const AnnualReport = () => {
                 </div>
                 
                 {/* Content */}
-                <section className="contents_wrap"> 
+                <section className="content-wrap"> 
                     <h3 className="hide">지진학술연보 조회</h3>  
-                    <p className="text_notice"><span>?</span>지진연구센터에서 발행한 지진학술연보의 다운로드 기능을 제공합니다.</p>
+                    <p className="text-notice"><span>?</span>지진연구센터에서 발행한 지진학술연보의 다운로드 기능을 제공합니다.</p>
                     
-                    <table className="table_view bdt2" summary="이벤트파형자료 조회 조건">
+                    <table className="table-view table-view--topline" summary="이벤트파형자료 조회 조건">
                         <colgroup>
                             <col style={{"width":"250px"}} />
                             <col style={{"width":"auto"}} /> 
@@ -42,19 +42,19 @@ const AnnualReport = () => {
                             <tr>
                                 <th scope="row">연도</th>
                                 <td>
-                                    <div className="form_box">
-                                        <label className="radio_01"><input type="radio" name="magnitude" /><span>2019</span></label>
-                                        <label className="radio_01"><input type="radio" name="magnitude" /><span>2020</span></label> 
-                                        <label className="radio_01"><input type="radio" name="magnitude" /><span>2021</span></label>  
+                                    <div className="formbox">
+                                        <label className="radio"><input type="radio" name="magnitude" /><span>2019</span></label>
+                                        <label className="radio"><input type="radio" name="magnitude" /><span>2020</span></label> 
+                                        <label className="radio"><input type="radio" name="magnitude" /><span>2021</span></label>  
                                     </div>  
                                 </td> 
                             </tr> 
                         </tbody>
                     </table>
-                    <div className="btn_wrap">
-                        <Link to="/" className="btn_big">다운로드</Link>
+                    <div className="button-area">
+                        <Link to="/" className="button-big">다운로드</Link>
                     </div>
-                    <div className="print_earthquake">
+                    <div className="board-view">
                         내용 출력
                     </div>
                 </section>

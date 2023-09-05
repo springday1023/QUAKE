@@ -1,0 +1,691 @@
+﻿// Content Wrap: 컨텐츠 공통
+.content-wrap{
+
+    @media screen and (max-width: #{$pc-width - 1}) {
+        
+        
+        
+        
+        &.kesmdb {
+            .formbox {
+                .formbox__col {
+                    margin-left: 20px;
+                    padding:5px 0 10px;
+                }
+                .entry.date {
+                    width: 100px;
+                }
+            }
+            .button-area a {
+                width: 100%;
+                margin: 0;
+            }
+            .table--scroll {
+                overflow-x: auto;
+                width: 100%;
+                table {
+                    width: 1000px;
+                }
+            }
+            .section_01 {
+                display: block;
+                padding-bottom: 10px;
+                h4 {
+                    margin-bottom: 10px;
+                }
+                ul {
+                    display: block;
+                    li {
+                        padding-bottom: 10px;
+                    }
+                }
+                .checkbox {margin-left: 0;margin-right: 10px;}
+            }
+        }
+    }
+
+}
+
+
+
+/* Page: INTRO/ABOUT
+----------------------------------------------- */
+.page-about{
+    h3 {
+        padding-top: 28px;
+        font-size: 30px;
+        line-height: 44px;
+        color: #707070;
+        margin-bottom: 12px;
+    }
+    p {
+        width: 360px;
+        font-size: 15px;
+        color: #656565;
+    }
+
+    section {
+        position: relative;
+        margin: 0 auto 80px;
+        box-sizing: border-box;
+    }
+
+    // .page-about__section
+    &__section{
+        &01{
+            height: 332px;
+            &::after{
+                content: "";
+                position: absolute;
+                left: 416px;
+                top: 0;
+                width: 100%;
+                background: url('../../assets/images/pc/bg_about_01.png') 0 0 no-repeat;
+                height: 332px;
+            }
+        }
+        &02{
+            padding-left: 844px;
+            height: 332px; 
+            &::after{
+                content: "";
+                position: absolute;
+                right: 416px;
+                top: 0;
+                width: 100%;
+                background: url('../../assets/images/pc/bg_about_02.png') 0 0 no-repeat;
+                height: 332px;
+            }
+        }
+    }
+
+    @media screen and (max-width: #{$pc-width - 1}) {
+        min-width: auto;
+        padding-top: 0;
+        
+        h3{
+            padding: 25px 20px 10px;
+            font-size: 30px;
+        }
+        p {
+            width:auto;
+            padding: 0 20px 24px;
+            font-size: 15px;
+        }
+
+        section {
+            margin-bottom: 24px;
+            padding: 0;
+            height: auto;
+        }
+
+        // .page-about__section
+        &__section{
+            height: auto; 
+
+            &01::after,
+            &02::after {
+                position: static;
+                display: block;
+                margin:0 20px;
+                width: auto;
+                background-position: center 0;
+
+            }
+        }
+    }
+}
+
+
+
+/* Page: DATA/WEBSERVICES
+ * Page: INTRO/TERMS
+ * Page: OBSERVATION/STATIONS
+----------------------------------------------- */
+.page-infobox{
+    $margin-left:24px;
+
+    section{
+        margin-left: $margin-left;
+        line-height: 1.6;
+        + section{
+            margin-top: 68px;
+        }
+    }
+
+    .title{
+        margin-left: -$margin-left;
+    }
+
+    li {
+        padding-left: 14px;
+        position: relative;
+        margin-bottom: 4px;
+    }
+    ul {
+        li::before{
+            content:'';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 5px;
+            height: 5px;
+            background-color: $point-color;
+            display: inline-block;
+            vertical-align: middle;
+            
+        }
+    }
+
+    ol{
+        margin-left: $margin-left - 10;
+        li{
+            padding-left: 4px;
+            list-style: decimal;
+            &::marker{
+                color:$point-color;
+                font-weight:600;
+            }
+       }
+    }
+
+
+    a {
+        color: $link-color;
+        font-style:normal;
+    }
+
+    
+    .source_box {
+        border: 1px solid $base-border-color;
+        padding: 24px;
+        margin: 16px 0 40px;
+        word-break:break-all;
+        font-size:0.933em;
+    }
+}
+
+
+
+
+/* Page: INTRO/NOTICES
+----------------------------------------------- */
+.page-notice{
+    // 상단 검색 영역
+    @at-root .serch-form {
+        height: 48px;
+        margin-bottom: 20px; 
+
+        &__inner {
+            $form-height: 46px;
+    
+            display: flex;
+            width: 337px;
+            height: $form-height;
+            border: 1px solid  $point-color;
+            opacity: 1;
+            float: right;
+            position: relative;
+            
+            select {
+                margin-right:10px;
+                color: $point-color;
+                font-weight: 700;
+                height: $form-height;
+                border: 0;
+                width: 80px;
+                text-indent: 14px;
+                font-weight: bold;
+                vertical-align: middle;
+            }
+    
+            input {
+                flex-grow:1;
+                height: $form-height;
+                border: 0;
+                outline: none;
+                color: $point-color;
+            }
+    
+            .btn-search {
+                width: $form-height;
+                height: $form-height;
+                font-family: 'Material Symbols Outlined'; 
+                &::after{
+                    content: "search";
+                    vertical-align: middle;
+                    color: $point-color;
+                    font-size: 25px;
+                }
+                span {
+                    display: none;
+                }
+            }
+
+            @media screen and (max-width: $m-width) {
+                float: none;
+                width: auto;
+            }
+    
+        }
+
+    }
+
+    .table-view {
+        
+        .entry_title {
+            border: 0;
+            width: 100%; 
+            height: 30px;
+        }
+        
+    }
+
+    @media screen and (max-width: $m-width) {
+        // 공지사항 한정 컬럼 줄이기
+        .table-list{
+            col:nth-child(1),
+            td:nth-child(1),
+            th:nth-child(1),
+            col:nth-child(3),
+            td:nth-child(3),
+            th:nth-child(3),
+            td:nth-child(5),
+            col:nth-child(5),
+            th:nth-child(5){
+                display: none;
+            }
+        }
+    }
+
+
+}
+
+
+
+/* Page: OBSERVATORY/STATIONS
+----------------------------------------------- */
+.page-observ {
+    display: flex;
+    
+    // .page-observ__map
+    &__map {
+        width: 50%;
+        box-sizing: border-box;
+        padding-right: 10px;
+        position: relative; 
+        .solt {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            font-weight: 700;
+            display: inline-block;  
+            display:flex;
+            border-radius: 3px;
+            h4 {
+                width: 106px;
+                height: 40px; 
+                line-height: 40px;
+                background: #fff;
+                box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.16);
+                border-radius: 4px;
+                text-align: center;
+                margin-right: 5px;
+                font-weight: normal;
+            }
+            ul {
+                padding:0 10px;
+                height: 40px;  
+                background: #fff;
+                box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.16);
+                border-radius: 4px;
+                align-items: center;
+                display:flex;
+                span {
+                    color: $point-color;
+                    white-space: nowrap;
+                }
+            }
+        }
+        
+    }
+    
+    // .page-observ__list
+    &__list {
+        width: 50%;
+        
+        .table-list {
+            td {
+                cursor: pointer;
+                padding: 10px 15px;
+            }
+        }
+    }
+
+    // .page-observ__pop
+    &__pop {
+        position: relative;
+        min-width: 220px; 
+        transition: box-shadow .25s;
+        padding: 11px 17px;
+        margin: 0 0 -4px;
+        box-sizing: border-box;
+        border-radius: 2px;
+        background-color: #fff;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12), 0 1px 5px 0 rgba(0,0,0,.2);
+        
+        .pop-tt {
+            color: $point-color;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+        .pop-info {
+            background: #ebebeb;
+            padding:9px 10px;
+            margin-bottom: 7px;
+            line-height: 20px;
+            font-size:14px; 
+            & > span {
+                display: block;
+            }
+        }
+        .pop-more {
+            text-align: right;
+            font-size: 13px;
+            
+            button {
+                color: $point-color;
+                text-decoration: underline;
+                text-underline-position: under;
+            }
+        }
+        .pop-close {
+            position: absolute;
+            right: 12px;
+            top: 8px;
+            width: 20px;
+            height: 20px;
+            color: #aaa;
+            span {
+                display: none;
+            }
+            &::after{
+                font-family: 'Material Symbols Outlined'; 
+                content: "close";
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+
+        // 화살표
+        &::before {
+            content: "";
+            border:solid #fff;
+            border-width:12px 8px;
+            border-color:#fff transparent transparent transparent;
+            position: absolute;
+            z-index: 998;
+            left:110px - 10px;
+            bottom: -24px;
+        }
+    }
+
+    // 관측소 상세 정보 레이어 팝업 안
+    /// .page-observ-info
+    &-info {
+        .table-view{
+            margin-bottom: 32px;
+        }
+        
+        .cont {
+            display: flex;
+            > section {
+                flex-grow: 1;
+                width: 50%;
+            }
+
+            .list {
+                display: flex;
+                flex-wrap: wrap;
+                li {
+                    width: 50%;
+                    padding: 0 5px;
+                    margin-bottom: 10px;
+                    box-sizing: border-box;
+                }
+
+                time {
+                    display: block;
+                    background: #ECECEC;
+                    padding: 8px 13px;
+                    font-size: 13px;
+                    line-height: 1.15;
+                }
+            }
+
+            .print {
+                img {
+                    margin-bottom: 16px;
+                }
+            }
+            
+        }
+    }
+
+
+    @media screen and (max-width: #{$pc-width - 1}) {
+        // .page-observ__map
+        &__map {
+            width: 100%;
+            padding-right: 0;
+            overflow: hidden;
+        }
+
+        // .page-observ__list
+        &__list {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: $m-width)  {
+        // .page-observ-info
+        &-info {
+            .table-view{
+                border-bottom:1px solid #ddd;
+                font-size:14px;
+                th,
+                td{
+                    display: table-cell;
+                    padding: 10px; 
+                    height: auto;
+                }
+                th{
+                    width: 30%;
+                }
+                td{
+                    width:70%;
+                }        
+            }
+    
+            .cont{
+                display: block;
+                > section{
+                    margin-top:24px; 
+                    width: 100%;
+                }
+            }
+        }
+    }
+} 
+
+
+
+
+/* Page: DATA
+----------------------------------------------- */
+// Continuous-Data
+// Analysis/KESMDB
+.databox {
+    display: flex;
+    gap:0 10px;
+    margin: 24px 0 40px;
+    padding: 16px 0;
+    border: solid $base-border-color;
+    border-width: 1px 0;
+
+    &:has(+ #{&}){
+        margin-bottom: -8px;
+        padding-bottom: 0;
+        border-bottom: 0 none;
+    }
+    
+    .title {
+        margin-bottom: 0;
+    }
+    ul {
+        display: flex;
+
+        & + ul{
+            margin-top: 4px;
+        }
+    }
+    li {
+        margin-left: 20px;
+    }
+
+    .table-view + & {
+        margin-top: -12px;
+        border-top: 0 none;
+    }
+
+    @media screen and (max-width: $m-width) {
+        display: block;
+ 
+        ul {
+            display: block;
+        }
+        li {
+            &:first-child{
+                margin-top: 10px;
+            }
+            margin:0 0 0 10px;
+        }
+    } 
+}
+
+
+
+/* Page: ANALYSIS/KESMDB
+----------------------------------------------- */
+.report-box {
+    display: flex;
+    gap: 0 25px;
+    
+    > div {
+        width: 50%;
+    }
+
+    h3 {
+        font-size: 17px;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    
+    .box {
+        margin-bottom: 20px;
+        font-size: 14px;
+        
+        p {
+            margin: 0 0 12px 20px;
+            color: #555;
+        }
+        &__row {
+            margin-left: 20px;
+            color: #444;
+        }
+        select {
+            margin: 0 8px;
+            min-width: 120px;
+            width: auto;
+        }
+        input[type="number"]{ 
+            margin: 0 8px; 
+            color: $point-color;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #d9d9d9;
+            outline: none;
+            height: 32px;
+            width: 100px;
+            font-size: 14px; 
+            box-sizing: content-box; 
+            text-align: center;
+            vertical-align: middle;
+        }
+    }
+    
+    // .report-box__data
+    &__data {
+        p {
+            margin-bottom: 30px;
+        }
+        
+        .text-agree {
+            margin:32px 0 16px;
+            a {
+                color:   $link-color;
+            }
+        }
+    }
+
+    @media screen and (max-width: #{$pc-width - 1}) {
+        display: block; 
+        > div {
+            width: 100%;
+        }
+
+        &__data {
+            text-align: left;
+        }
+    }
+} 
+
+
+
+
+
+
+
+
+
+
+.content-wrap{
+    
+     &.kesmdb{
+        .table-foot, 
+        .table-list  {
+            margin-bottom: 40px;
+            td {
+                cursor: pointer;
+            }
+            button {
+                color:  $link-color;
+            }
+        }
+    } 
+
+
+    
+    
+    
+    
+        
+    
+    .button-area {
+        a {
+            width: 270px;
+        }
+    } 
+    
+} 

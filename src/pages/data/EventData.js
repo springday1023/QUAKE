@@ -10,16 +10,16 @@ const EventData = () => {
     return (
         <>
             {/* Header */}
-            <Header subPageCheck="sub_header" />
+            <Header subPageCheck="header--sub" />
             
             {/* Contents Body */}
-            <main className="sub_container">
+            <main className="content">
                 
                 {/* Page Title */}
                 <PageHeader mainTitle="이벤트파형자료" />  
                 
                 {/* Location */}
-                <div className="location_wrap">
+                <div className="content-path">
                     <p className="inner">
                         <Link to="/" className="ico_home">
                         Home</Link>
@@ -30,11 +30,11 @@ const EventData = () => {
                 </div>
                 
                 {/* Content */}
-                <section className="contents_wrap"> 
+                <section className="content-wrap"> 
                     <h3 className="hide">이벤트파형자료 조회</h3>  
-                    <p className="text_notice"><span>?</span>지진 단위 이벤트파형자료 묶음의 검색 및 다운로드 기능을 제공합니다.</p>
+                    <p className="text-notice"><span>?</span>지진 단위 이벤트파형자료 묶음의 검색 및 다운로드 기능을 제공합니다.</p>
                     
-                    <table className="table_view bdt2" summary="이벤트파형자료 조회 조건">
+                    <table className="table-view table-view--topline" summary="이벤트파형자료 조회 조건">
                         <colgroup>
                             <col style={{"width":"150px"}} />
                             <col style={{"width":"auto"}} /> 
@@ -43,28 +43,30 @@ const EventData = () => {
                             <tr>
                                 <th scope="row">규모</th>
                                 <td>
-                                    <div className="form_box">
-                                        <label className="radio_01"><input type="radio" name="magnitude" /><span>2.5+</span></label>
-                                        <label className="radio_01"><input type="radio" name="magnitude" /><span>3.0+</span></label> 
-                                        <label className="radio_01"><input type="radio" name="magnitude" /><span>4.0+</span></label> 
-                                        <span className="group_m">
-                                            <label className="radio_01"><input type="radio" name="magnitude" /><span>직접 입력</span></label> 
+                                    <div className="formbox">
+                                        <span class="formbox__col">
+                                            <label className="radio"><input type="radio" name="magnitude" /><span>2.5+</span></label>
+                                            <label className="radio"><input type="radio" name="magnitude" /><span>3.0+</span></label> 
+                                            <label className="radio"><input type="radio" name="magnitude" /><span>4.0+</span></label> 
+                                        </span>
+                                        <span className="formbox__col">
+                                            <label className="radio"><input type="radio" name="magnitude" /><span>직접 입력</span></label> 
                                             <input type="text" className="entry" /> ~ <input type="text" className="entry" />
                                         </span>
-                                        <span className="text_cation"><span>!</span> 규모를 입력해주세요.</span>
+                                        <span className="text-caution __error"><span>!</span>규모를 입력해주세요.</span>
                                     </div>  
                                 </td> 
                             </tr> 
                             <tr>
                                 <th scope="row">기간</th>
                                 <td> 
-                                    <div className="form_box">
-                                        <label className="radio_01"><input type="radio" name="period" /><span>과거 7일</span></label>
-                                        <label className="radio_01"><input type="radio" name="period" /><span>과거 30일</span></label> 
-                                        <label className="radio_01"><input type="radio" name="period" /><span>2023년</span></label> 
+                                    <div className="formbox">
+                                        <label className="radio"><input type="radio" name="period" /><span>과거 7일</span></label>
+                                        <label className="radio"><input type="radio" name="period" /><span>과거 30일</span></label> 
+                                        <label className="radio"><input type="radio" name="period" /><span>2023년</span></label> 
                                     </div>  
-                                    <div className="form_box">
-                                        <label className="radio_01"><input type="radio" name="period" /><span>직접 입력</span></label> 
+                                    <div className="formbox">
+                                        <label className="radio"><input type="radio" name="period" /><span>직접 입력</span></label> 
                                         <input type="text" className="entry date" /> ~ <input type="text" className="entry date" />
                                     </div>  
                                 </td> 
@@ -72,35 +74,55 @@ const EventData = () => {
                             <tr>
                                 <th scope="row">위치</th>
                                 <td>
-                                    <div className="form_box">
-                                        <label className="radio_01"><input type="radio" name="selectorType" /><span>전체</span></label>
+                                    <div className="formbox">
+                                        <label className="radio"><input type="radio" name="selectorType" /><span>전체</span></label>
                                     </div>
-                                    <div className="form_box">
-                                        <label className="radio_01"><input type="radio" name="selectorType" /><span>위도 범위</span></label>
-                                        <input type="text" className="entry" /> ~ <input type="text" className="entry" />
-                                        <span className="box">
-                                            <strong>경도 범위</strong>
-                                            <input type="text" className="entry" /> ~ <input type="text" className="entry" />
+                                    <div className="formbox">
+                                        <span className="formbox__col">
+                                            <label className="radio">
+                                                <input type="radio" name="selectorType" />
+                                                <span>위도<span className="pc">범위</span></span>
+                                            </label>
+                                            <input type="text" className="entry" placeholder="35.0" /> ~
+                                            <input type="text" className="entry" placeholder="38.0" />
                                         </span>
-                                        <span className="text_cation"><span>!</span> 위도 범위를 입력해주세요.</span>
+
+                                        <span className="formbox__col">
+                                            <label className="radio radio__noshow">
+                                                <input type="radio" name="selectorType" disabled />
+                                                <span>경도<span className="pc">범위</span></span>
+                                            </label>
+                                            <input type="text" className="entry" placeholder="126.0" /> ~ 
+                                            <input type="text" className="entry" placeholder="129.0" />
+                                        </span>
+                                        <span className="text-caution __error"><span>!</span>위도 범위를 입력해주세요.</span>
                                     </div>
-                                    <div className="form_box">
-                                        <label className="radio_01"><input type="radio" name="selectorType" /><span>위경도 중심</span></label>
-                                        <input type="text" className="entry" />, <input type="text" className="entry" />
-                                        <span className="box">
-                                            <strong>반경</strong>
-                                            <input type="text" className="entry" /> km
+                                    <div className="formbox">
+                                        <span className="formbox__col">
+                                            <label className="radio">
+                                                <input type="radio" name="selectorType" />
+                                                <span><span className="pc">위경도</span>중심</span>
+                                            </label>
+                                            <input type="text" className="entry" placeholder="36.3" />, 
+                                            <input type="text" className="entry" placeholder="127.5" />
+                                        </span>
+                                        <span className="formbox__col">
+                                            <label className="radio radio__noshow">
+                                                <input type="radio" name="selectorType" disabled />
+                                                <span>반경</span>
+                                            </label>
+                                            <input type="text" className="entry" placeholder="30" /> km
                                         </span>
                                     </div>
                                 </td> 
                             </tr> 
                         </tbody>
                     </table>
-                    <div className="btn_wrap">
-                        <Link to="/" className="btn_big">자료 조회</Link>
+                    <div className="button-area">
+                        <Link to="/" className="button-big">자료 조회</Link>
                     </div>
                      
-                    <div className="table_hd">
+                    <div className="table-head">
                         <p>총 0건</p>
                         <select>
                             <option>10개</option>
@@ -110,7 +132,7 @@ const EventData = () => {
                         </select>
                     </div>
 
-                    <div className="table_list line mobile_scroll">
+                    <div className="table-list table-list--line table--scroll">
                         <table summary="이벤트파형 목록">
                             <colgroup>
                                 <col style={{"width":"5%","minWidth":"40px"}} />
@@ -155,9 +177,9 @@ const EventData = () => {
                         </table> 
                     </div>
 
-                    <p className="text_cation_02"><span>i</span>본 이벤트 목록은 기상청 날씨누리에 게시된 <a href="https://www.weather.go.kr/w/eqk-vol/search/korea.do" target="_blank" rel="noreferrer">국내지진 목록</a>(규모 2.5 이상)에 기반한 것입니다.</p>
+                    <p className="text-caution"><span>i</span>본 이벤트 목록은 기상청 날씨누리에 게시된 <a href="https://www.weather.go.kr/w/eqk-vol/search/korea.do" target="_blank" rel="noreferrer">국내지진 목록</a>(규모 2.5 이상)에 기반한 것입니다.</p>
                     
-                    <div className="table_footer">
+                    <div className="table-foot">
                         <Page />
                     </div> 
                 </section>

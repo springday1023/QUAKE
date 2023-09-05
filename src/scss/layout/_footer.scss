@@ -1,0 +1,75 @@
+﻿/* [C] Footer
+----------------------------------------------- */
+.footer {
+    position: relative;
+    padding-bottom: 48px;
+    font-size: 15px;
+    color: $color-font-gray;
+    
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 69px;
+        border-bottom: 1px solid #e8e8e8;
+    }
+
+    // 링크 .footer__link
+    &__link {
+        width: $pc-width - 20;
+        margin: 0 auto;
+        height: 68px;
+        display:flex;
+        align-items: center;
+        a {
+            color: $base-font;
+        }
+        .bar {
+            display: inline-block;
+            margin: 0 15px;
+            width: 1px;
+            overflow: hidden;
+            text-indent: -999px;
+            border-right: 1px solid $base-font;
+            height: 15px;
+        }
+    }
+    
+    address {
+        width: $pc-width - 20;
+        margin: 0 auto; 
+        padding-top: 20px;
+        font-size: 14px;
+        color: $font-color1;
+        span {
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: #{$pc-width - 1}) {
+        min-width: auto;
+        color: $color-font-gray;
+        &::after{display: none;}
+        
+        // .footer__link
+        &__link {
+            border-bottom: 1px solid #e8e8e8;
+            width: auto;
+            margin: 0 auto;
+            height: auto;
+            flex-wrap: wrap;
+            padding: 10px 24px;
+            align-content: center;
+            a {
+                padding-bottom: 5px;
+                font-size: 14px;
+            }
+        }
+        address {
+            width: auto;
+            padding: 20px 24px 0;
+            font-size:13px;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+﻿/* [C] Buttons
+----------------------------------------------- */
+.button{
+    // 영역 > .button-area
+    &-area{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 50px;
+        a {
+            margin: 0 10px;
+        }
+
+        @media screen and (max-width: $m-width) {
+            a {
+                margin: 0;
+                width: 100% !important;
+            }
+        }
+    } 
+
+    // .button-big
+    &-big {
+        display: inline-block;
+        width: 178px;
+        height: 55px; 
+        text-align: center;
+        line-height: 55px; 
+        letter-spacing: 0px;
+        color: #FFF;
+        font-size: 17px;
+        background: $point-color ;
+    }
+
+    // .button-small
+    &-small {
+        display: inline-block;
+        padding: 0 19px;
+        height: 30px; 
+        text-align: center;
+        line-height: 30px; 
+        letter-spacing: 0px;
+        color: #FFF;
+        font-size: 13px;
+        background: $point-color ;
+    }
+
+    // .button-medium
+    &-medium {
+        display: inline-block;
+        padding: 0 19px;
+        height: 39px; 
+        text-align: center;
+        line-height: 30px; 
+        letter-spacing: 0px;
+        color: #FFF;
+        font-size: 13px;
+        background: $point-color ;
+    }
+
+    // .button-upload
+    &-upload {
+        width: 137px;
+        height: 39px;
+        line-height: 39px;
+        text-align: center;
+        color: #FFFFFF;
+        font-size: 15px;
+        background: #6B6B6B;
+    }
+}

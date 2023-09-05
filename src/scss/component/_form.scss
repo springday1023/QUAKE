@@ -1,0 +1,334 @@
+﻿/* [C] Form Controls
+----------------------------------------------- */
+.formbox{ 
+    & + &{
+        margin-top: 13px;
+    }
+
+    // Input: 폼박스 안 기본 인풋 타입 
+    .entry {
+        border:0;
+        border-bottom: 1px solid #d9d9d9;
+        width: 50px;
+        height: 30px;
+        text-align: center;
+        vertical-align: middle;
+        margin: 0 5px;
+        color: $point-color;
+        
+        &:focus{
+            border-bottom: 1px solid $point-color;
+            outline:0;
+        }
+        
+        &:first-of-type{
+            margin-left: 0;
+        }
+
+        &.date {
+            width: 120px;
+
+            @media screen and (max-width: $m-width) {
+                width: 100px;
+            }
+        }
+    }
+
+    strong {
+        font-weight: normal;
+        color: $point-color;
+    }
+
+    button + button {
+        margin-left: 5px;
+    }
+
+    // PC 버전에서만 보임
+    .pc {
+        display: inline-block;
+
+        @media screen and (max-width: $m-width) {
+            display: none;
+        }
+    }
+
+    // 단독 레이블: .formbox__label
+    &__label{
+        margin-right: 13px;
+        vertical-align: middle;
+        font-weight: 400;
+    }
+
+    // 영역: .formbox__col
+    &__col{
+        display:inline-table;
+
+        &:not(:last-child) {
+            margin-right: 12px;
+        }
+
+        .formbox{
+            margin-left: 20px;
+        }
+
+        @media screen and (max-width: $m-width) {
+            display:block; 
+            margin: 0 0 4px 0;
+        }
+    }
+
+    // 선택박스: .formbox__multi
+    &__multi {
+        border: 1px solid #DFDFDF;
+        padding: 16px;
+        margin-top: 13px;
+        overflow-y: auto;
+        height: 300px;
+        
+        .search {
+            display: flex; 
+            margin-bottom: 18px;               
+            color: #6d6d6d;
+            font-weight: 700;
+
+            > span {
+                flex-shrink: 0;
+            }
+            
+            input[type="text"] {
+                border: 0;
+                border-bottom: 1px solid #D9D9D9;
+                height: 19px;
+                padding-bottom: 6px;
+                margin-left: 13px;
+                width: 250px;
+                outline: none;
+                font-size: 0.933em; 
+            }
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        li {
+            width: 25%;
+        }
+        .checkbox{
+            > span{
+                margin-right: 0;
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: #{$pc-width - 1}) {
+            li{
+                width: 33.33%;
+            }
+        }
+
+        @media screen and (max-width: $m-width) {
+            li{
+                width: 50%;
+            }
+        }
+    }
+    
+    // 조건설정: .formbox__setting
+    &__setting {
+        padding: 16px 20px 8px;
+        
+        li {
+            display:flex; 
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        .col {
+            width: 140px;
+        }
+
+        @media screen and (max-width: #{$pc-width - 1}) {
+            > *{
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: $m-width) {
+            padding:0 20px;
+            li {
+                display: block;
+            }
+            .col:first-child {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+// Input: Checkbox
+.checkbox {
+	$checkbox-size: 14px;
+    
+    display: inline-block;
+	overflow: hidden;
+	position: relative;
+	vertical-align: middle;
+    line-height:2em;
+    white-space: nowrap;
+
+    &:has(+ *){
+        margin-right: 12px;
+    }
+
+    > span {
+		position: relative; 
+		cursor: pointer;
+		display: inline-flex; 
+        align-items:center;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		margin-right: 16px; 
+		
+        &::before{
+			content: "";
+            flex-shrink: 0;
+            margin-right:6px; 
+            height: $checkbox-size;
+			width: $checkbox-size;
+			background-color: transparent;
+            box-sizing: border-box;
+			border: 1px solid  $point-color;
+            border-radius: 2px;
+		}
+
+        &::after{
+			content: "";
+			position: absolute;
+			transition: border .25s, background-color .25s, width .2s .1s, height .2s .1s, top .2s .1s, left .2s .1s;
+			z-index: 1;
+			width: 0;
+			height: 0;
+			border: 3px solid transparent;
+			top: calc(50% - #{$checkbox-size / 2}); 
+			transform: rotate(37deg); 
+			transform-origin: 100% 100%;
+			border-radius: 1px;
+			margin-top: 3px;
+		} 
+		
+		&.hidden {
+            width: $checkbox-size; 
+            height: $checkbox-size;
+			overflow:hidden;
+			margin-right: 0;
+            white-space: nowrap;
+            text-indent: 100%;
+
+            &::before{
+                margin-right: 0;
+            }
+		}
+	}
+
+	input[type="checkbox"] {
+		position: absolute;
+		left: -9999px;
+		top: 0;
+		&:checked + span::before { 
+            border-color: $point-color;
+			background-color: $point-color;
+		}
+		&:checked + span::after {    
+			top: calc(50% - 10px);
+			left: 0;
+			width: 2px;
+			height: 7px;
+			border-color: transparent #fff #fff transparent;
+			border-style: solid;
+			border-width: 2px;
+			-webkit-transform: rotate(37deg);
+			transform: rotate(37deg);
+			-webkit-transform-origin: 100% 100%;
+			transform-origin: 100% 100%;
+		}
+			 
+	} 
+
+    
+    // .checkbox__noshow : 영역은 그대로, 보이지 않음.
+    &__noshow{
+        & > span::before{
+            visibility:hidden;
+        }
+    }
+}
+ 
+// Input: Radio
+.radio {
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	vertical-align: middle; 
+    line-height:2em;
+    white-space: nowrap;
+
+    &:has(+ *){
+        margin-right: 12px;
+    }
+	
+    & > span {
+		display: inline-flex;
+        align-items: center;
+		position: relative;
+		margin-right: 10px;
+        padding:0 1px;
+		transition: .28s ease;
+		user-select: none; 
+		cursor: pointer;
+        line-height:1.2;
+		
+        &::before{
+			content: "";
+            flex-shrink: 0;
+			width: 9px; 
+            height: 9px;
+            margin-right:8px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            outline: 1px solid $point-color;
+		} 
+	}
+
+	input[type="radio"] {
+		position: absolute;
+		left: -9999px;
+		top: 0;
+		&:checked + span::before {    
+            background-color:$point-color;
+		}
+			 
+	}
+	
+    // .radio__noshow : 영역은 그대로, 보이지 않음.
+    &__noshow{
+        & > span::before{
+            visibility:hidden;
+        }
+    }
+}
+ 
+// SelectBox
+select {
+	width: 200px;
+	border: 0;
+	height: 40px;
+	border-bottom: 1px solid #d9d9d9;
+	font-family: inherit;
+	background: url('../../assets/images/pc/bul_arrow_03.png') no-repeat right 5px center;
+	border-radius: 0px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}

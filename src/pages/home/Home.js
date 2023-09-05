@@ -13,8 +13,8 @@ const Home = () => {
             <Header />
             
             {/* Contents Body */}
-            <main className="main_container">
-                <div className="visual_slider">
+            <main className="content">
+                <div className="home-visual">
                     <Swiper  
                         navigation={true}
                         modules={[Autoplay, EffectFade, Navigation]} 
@@ -26,28 +26,28 @@ const Home = () => {
                             disableOnInteraction: false
                         }}
                     >
-                        <SwiperSlide className="slider01"> 
-                            <div className="text">
-                                <p className="text_01">MULTIPLATFORM<br />GEOSCIENCE<br />INFORMATION</p>
-                                <p className="text_02">국민의 삶의 질 향상과<br />  국민 행복 추구에 기여하겠습니다.</p>
+                        <SwiperSlide className="home-visual__bg1"> 
+                            <div className="home-visual__text">
+                                <p className="tt">MULTIPLATFORM<br />GEOSCIENCE<br />INFORMATION</p>
+                                <p className="desc">국민의 삶의 질 향상과<br />  국민 행복 추구에 기여하겠습니다.</p>
                             </div>
                         </SwiperSlide>  
-                        <SwiperSlide className="slider02"> 
-                            <div className="text">
-                                <p className="text_01">MULTIPLATFORM<br />GEOSCIENCE<br />INFORMATION</p>
-                                <p className="text_02">국민의 삶의 질 향상과<br /> 국민 행복 추구에 기여하겠습니다.</p>
+                        <SwiperSlide className="home-visual__bg2"> 
+                            <div className="home-visual__text">
+                                <p className="tt">MULTIPLATFORM<br />GEOSCIENCE<br />INFORMATION</p>
+                                <p className="desc">국민의 삶의 질 향상과<br /> 국민 행복 추구에 기여하겠습니다.</p>
                             </div>
                         </SwiperSlide>    
                     </Swiper>
                 </div>
-                <dl className="notice_wrap">
+                <dl className="home-notice">
                     <dt>공지사항</dt>
                     <dd>
-                        <Link to="#" className="link">
+                        <Link to="#" className="home-notice__link">
                             <span>[안내] MGEO 지질정보시스템 업그레이드</span>
                             <span>2021.01.01</span>
                         </Link>
-                        <Link to="#" className="btn_more"><span>더보기</span></Link>
+                        <Link to="#" className="home-notice__more"><span>더보기</span></Link>
                     </dd>
                 </dl>
             </main> 

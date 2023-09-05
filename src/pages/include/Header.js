@@ -66,12 +66,16 @@ const Header = (props) => {
     };
     return (
         <>
-            <p className="a11y_link"><a href="#body_container">본문 바로가기</a></p>
-            <header onMouseLeave={handleMouseLeave}  className={isGnbToggle ? 'header_container active ' + props.subPageCheck : 'header_container ' + props.subPageCheck  }>{/* 오픈 상태일때는 active */}
-                <div className="inner">
-                    <h1 className="logo"><Link to="/" className="parents">지오빅데이터 오픈플랫폼</Link><Link to="/" className="index">지진연구정보</Link></h1>
-                    <nav className={ isGnbToggle ? "close" : ""}> {/* 오픈 상태일때는 close */}
-                        <ul>
+            <p className="a11y-link"><a href="#body_content">본문 바로가기</a></p>
+            <header onMouseLeave={handleMouseLeave}  className={isGnbToggle ? 'header header--active ' + props.subPageCheck : 'header ' + props.subPageCheck  }>{/* 오픈 상태일때는 active */}
+                <div className="header__inner">
+                    <h1 className="logo">
+                        <Link to="/" className="parents">지오빅데이터 오픈플랫폼</Link>
+                        <Link to="/" className="index">지진연구정보</Link>
+                    </h1>
+                    
+                    <nav className={`nav${isGnbToggle ? " nav--extended" : ""}`}> {/* 오픈 상태일때는 close */}
+                        <ul className="nav-list">
                         {menuData.map((menu) => (
                             <li
                                 key={menu.id}
@@ -79,9 +83,9 @@ const Header = (props) => {
                                 onMouseOver={() => handleMenuClick(menu.id)}
                                 onClick={() => handleMenuClick(menu.id)}
                             >
-                                <Link className={menu.className} to={menu.link}> {menu.title}</Link> 
+                                <Link className="nav-list__tt"> {menu.title}</Link> 
                                 {menu.subMenu.length > 0 && (
-                                <div className="sub_menu">
+                                <div className="nav-list__sub">
                                     <ul>
                                         {menu.subMenu.map((subMenu) => (
                                         <li key={subMenu.id}><Link to={subMenu.link}>{subMenu.title}</Link></li>
@@ -91,19 +95,19 @@ const Header = (props) => {
                                 )}
                             </li>
                             ))}
-                            <li className="login_menu">
-                                <button type="button" className="btn_login">로그인</button>
-                                <div className="sub_menu">
+                            <li className="nav-list-util">
+                                <button type="button" className="btn">로그인</button>
+                                <div className="nav-list__sub">
                                     <p><strong>홍길동</strong>님</p>
-                                    <Link to="#" className="btn_member">회원정보변경</Link>
+                                    <Link to="#" className="btn-set">회원정보변경</Link>
                                 </div>
                             </li>
-                            <li>
-                                <button type="button" className="btn_language">English</button>
+                            <li className="nav-list-util">
+                                <button type="button" className="btn">English</button>
                             </li>
                         </ul>
                     </nav>
-                    <button type="button" className="btn_ham" onClick={hambugerMenuSwitchHandler}><span>{isGnbToggle  ? '메뉴 닫기' : '메뉴 열기'}</span></button>
+                    <button type="button" className="menu-ham" onClick={hambugerMenuSwitchHandler}><span>{isGnbToggle  ? '메뉴 닫기' : '메뉴 열기'}</span></button>
                 </div>
             </header>
         </>

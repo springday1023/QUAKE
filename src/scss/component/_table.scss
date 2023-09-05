@@ -1,0 +1,498 @@
+/* [C] Table (Data & Board)
+----------------------------------------------- */
+.table {
+    // Table Header : .table-head
+    &-head {
+        padding-bottom: 12px;
+        display: flex;
+        gap: 0 10px;
+        align-items: flex-end;
+        justify-content: space-between;
+        line-height: 1.2;
+
+        > *:first-child {
+            flex-shrink: 0;
+        }
+        
+        select {
+            width: 100px;
+            text-indent: 10px;
+        }
+
+        .checkbox{
+            > span{
+                font-size:15px;
+                &::before{
+                    border-color:#666;
+                }
+            }
+        }
+
+        @media screen and (max-width: $m-width) {
+            &__rtl {
+                margin-top: 8px;
+                font-size: 14px;
+                color: #666;
+            }
+        }
+    }
+
+    // Table Footer : .table-foot
+    &-foot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin: 24px 0 0;
+        
+        > * {
+            flex-grow: 1;
+        }
+
+        // .table-foot__rtl
+        &__rtl {
+            margin-left: auto; 
+            flex-grow: 0;
+        }
+
+        .pagination {
+            margin: 0;
+        }
+
+        @media screen and (max-width: $m-width) {
+            display: block;
+            margin: 24px 0;
+            
+            .pagination {
+                padding-bottom: 25px;
+            }
+
+            &__rtl {
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+
+                a[class^="button"] {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    // List : .table-list
+    /// 라인이 없는 기본 리스트 타입 (보드에 사용)
+    &-list{ 
+        table {
+            table-layout: fixed;
+            width: 100%; 
+        }
+        th {
+            border-top: 1px solid $point-color;
+            background-color: #f5f5f5;
+            color: darken($point-color, 5%);
+            text-align: center;
+            font-weight: 600;
+            padding: 15px 5px;
+            font-size: 15px;
+            line-height:1.15;				
+            border-bottom: 1px solid $base-border-color;
+        } 
+        td {
+            text-align: center;
+            padding: 15px 5px;
+            border-bottom: 1px solid $base-border-color;
+            vertical-align: middle; 
+            color: #656565; 
+            cursor: pointer;
+            line-height:1.2;
+        }
+        tr {
+            &:hover td {
+                background-color: #f8f8f8;
+            }
+            &.grade_1 td {
+                background-color: #e8e8e8 ;
+            }
+            &.grade_2 td {
+                background-color: #F9D7D7 ;
+            }
+            &.grade_3 td {
+                background-color: #f9d3ae ;
+            }
+            &.grade_4 td {
+                background-color: #cbf5cb
+            }
+
+
+            // TR : 제목 + 배경색 추가
+            &.row_01{
+               th{
+                    background-color: rgba($point-color, .8);
+                    border-color: #fff;
+                    border-bottom-width: 2px;
+                    border-top: 2px solid $point-color;
+                    color: #fff;
+                } 
+            }
+        }
+
+        // .td-title
+        .td-title {
+            padding-left: 15px;
+            text-align: left;
+            a {
+                color: #656565; 
+                strong {
+                    color: $point-color;
+                    font-weight: 700
+                }
+            }
+        } 
+
+        // .td-file
+        .td-file{
+            &::after {
+                font-size: 25px;
+                font-weight: 300;
+                font-family: 'Material Symbols Outlined'; 
+                content: "download";
+            }
+            span {
+                display: none;
+            }
+        }
+
+        // 라인이 있는 타입 : .table-list--line
+        &--line { 
+            th, 
+            td {
+                border-left: 1px solid $base-border-color;
+
+                &:first-child {
+                    border-left:0;
+                }
+            }
+            tr:has(> th[rowspan]) + tr th{
+                border-left: 1px solid $base-border-color;
+            }
+        }
+    } 
+
+    // Table View : .table-view
+    /// 기본 테이블
+    &-view { 
+        width: 100%; 
+        margin-bottom: 20px;
+        th {
+            position: relative;
+            border-top: 1px solid $base-border-color;
+            border-bottom: 1px solid $base-border-color;
+            background-color: #f5f5f5;
+            color: $point-color;
+            text-align: center;
+            font-weight: 600;
+        }
+        td {
+            padding: 15px 25px;
+            border-top: 1px solid $base-border-color;
+            border-bottom: 1px solid $base-border-color;
+            .imp {
+                color: $point-color;
+                font-weight: 700;
+            }
+            .file {
+                font-size: 15px;
+                line-height: 30px;
+                a {
+                    color: #6b6b6b;
+                }
+            }
+    
+        } 
+        
+        // 상단 라인 : .table-veiw--topline
+        &--topline {
+            border-top: 2px solid $point-color;
+        } 
+        
+        // 제목 (TH) 안 문구
+        .text-quote {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 400;
+
+            &::before{
+                @include googleIconFont('error', 14px);  
+                margin: -1px 2px 0 0;
+            }
+        }
+
+        // 첨부파일 리스트
+        .file-list{
+            margin-bottom: 12px;
+            p {
+                display: flex; 
+                align-items: center;
+                margin-bottom: 8px;
+
+                &:not(:has(.file-list__del)){
+                    &::after {
+                        margin-left: 8px;
+                        font-size: 24px;
+                        font-family: 'Material Symbols Outlined'; 
+                        line-height: 1;
+                        content: "download";
+                    }
+                }
+            }
+            &:last-child,
+            p:last-of-type {
+                margin-bottom: 0;
+            }
+
+            // 삭제 버튼 : .file-list__del
+            &__del {
+                &::after{
+                    font-family: 'Material Symbols Outlined'; 
+                    content: "delete";
+                    font-size: 20px;
+                    vertical-align: middle;
+                    margin-left: 5px;
+                }
+                span {
+                    display: none;
+                }
+            }
+        }
+
+        @media screen and (max-width: $m-width){
+            col {
+                display: none;
+            }
+            tr {
+                display: flex;
+                width: 100%; 
+                position: relative;
+                flex-wrap: wrap; 
+
+                &:last-child td{
+                    border-bottom: 1px solid $base-border-color;
+                }
+            }
+            th {
+                width: 100%;
+                height: 48px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: flex-start;
+                box-sizing: border-box;
+                border-bottom:0;
+                padding:0 12px;
+            }
+            td {
+                width: 100%;
+                box-sizing: border-box; 
+                border-bottom: 0 none;
+                padding: 20px 12px;
+            }
+            
+            // 테이블이 여러 개 나열된 경우
+            & + &{
+                margin-top:-20px;
+                th {
+                    border-top: 0 none;
+                }
+            }
+
+            .text-quote{
+                position: static;
+                width: auto;
+                margin-left: 20px;
+            }
+
+            .btn {
+                display: block;
+                margin-top: 4px;
+            }  
+        } 
+    }
+
+    // 테이블 스크롤 타입 : .table--scroll
+    &--scroll {
+        overflow-x: auto;
+        width: 100%;
+        
+        table {
+            min-width: $m-width;
+        }
+    }
+
+    // 툴팁
+    @at-root {
+        .tooltip {
+            display: inline-block;
+            position: relative;
+            
+            &__cont {
+                display: none;
+                color: #fff;
+                text-align: left;
+                padding:10px 20px;
+                line-height: 1.5;
+                position: absolute; 
+                width: 153px;
+                left:calc(50% - 100px);;
+                top: 30px;
+                box-sizing: border-box;
+                height: 136px;
+                background: rgba(0, 0, 0, 0.6) 0% 0% no-repeat; 
+                
+                &::before{
+                    content: ""; 
+                    width: 0; 
+                    height: 0; 
+                    border-left: 7px solid transparent;
+                    border-right: 7px solid transparent; 
+                    border-bottom: 7px solid rgba(0, 0, 0, 0.6);
+                    position: absolute;
+                    z-index: 1;
+                    left: calc(50% + 15px);
+                    top: -7px;
+                }
+                strong {
+                    display: block;
+                    font-size: 15px;
+                    padding-bottom: 5px;
+                }
+                span {
+                    font-size: 13px;
+                    font-weight: normal;
+                }
+
+                button:hover + & {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* [C] Board
+----------------------------------------------- */
+.board {
+    // .board-view
+    &-view{
+        padding: 8px 24px 24px;
+        border-bottom: 1px solid $base-border-color;
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 24px;
+        
+        a {
+            color: $link-color;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: $m-width) {
+            padding: 8px 0 24px;
+        }
+    }
+
+    // .board-editor 
+    &-editor {
+        border-bottom: 1px solid $base-border-color;
+        margin-bottom: 24px;
+        padding: 16px 0 32px;
+    }
+}
+
+
+
+
+/* [C] Pagination
+----------------------------------------------- */
+.pagination {
+    margin:48px 0;
+    text-align: center;
+    a { 
+        transition: all .3s ease-out;
+        display: inline-block;
+        padding: 0 5px;
+        margin: 0 10px;
+        line-height: 36px;
+        color: #acacac;
+        vertical-align: middle;
+        
+        &.front,
+        &.prev,
+        &.next,
+        &.end { 
+            line-height: 30px;  
+            width: 36px;
+            height: 36px;
+            border: 1px solid $base-border-color; 
+            box-sizing: border-box;
+            padding: 0;
+            text-align: center;
+            margin: 0 2px;
+            span {
+                display: none;
+            }
+            &:hover{
+                background-color: #f8f8f8;
+            }
+        } 
+        &.front::after{
+            @include googleIconFont('first_page',20px);  
+        }
+        &.prev::after{
+            @include googleIconFont('chevron_left',20px);   
+        }
+        &.next::after{
+            @include googleIconFont('chevron_right',20px);    
+        }
+        &.end::after{
+            @include googleIconFont('last_page',20px);     
+        } 
+        &:hover{
+            color: #000;
+        }
+    }
+    strong {
+        display: inline-block;
+        padding: 0 5px;
+        line-height: 36px;
+        color: $point-color;
+        margin: 0 10px;
+        vertical-align: middle;
+    }
+
+    @media screen and (max-width: #{$pc-width - 1}){
+        a {
+            &.prev, 
+            &.next {
+                display: inline-block;
+                width: 60px;
+            }
+            &.front, 
+            &.end{
+                display: none;
+            }
+        }
+        strong{
+            width: 30px;
+        }
+    }
+    
+    @media screen and (max-width: $m-width) {  
+        a{
+            display: none;
+        }
+    }
+}
