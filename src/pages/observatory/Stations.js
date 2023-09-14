@@ -84,10 +84,10 @@ const Stations = () => {
                                     </colgroup>
                                     <thead>
                                         <tr>
-                                            <th scope="col">관측소 코드</th>
-                                            <th scope="col">관측소명</th>
-                                            <th scope="col">설치유형</th>
-                                            <th scope="col">센서종류</th>
+                                            <th scope="col"><a role="button" class="data-sort">관측소 코드</a></th>
+                                            <th scope="col"><a role="button" class="data-sort">관측소명</a></th>
+                                            <th scope="col"><a role="button" class="data-sort">설치유형</a></th>
+                                            <th scope="col"><a role="button" class="data-sort">센서종류</a></th>
                                         </tr>
                                     </thead>
                                     <tbody>
